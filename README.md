@@ -61,7 +61,7 @@ This structure is designed to help you understand a vulnerability from an attack
 - [Exercise 3 - Security Logging and Monitoring Failures](exercises/ex3/README.md)
     - [Exercise 3.1 - Audit Logging for Sensitive Data Access in Local Development](exercises/ex3/ex3.1/README.md)
     - [Exercise 3.2 - Security Event Monitoring in SAP BTP Production Environment (Optional - requires production landscape)](exercises/ex3/ex3.2/README.md)
-- [Additional Resources](exercises/resources/README.md)
+- [Additional Resources](resources/README.md)
 
 ## Known Issues
 No known issues.
