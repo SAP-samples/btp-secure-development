@@ -177,7 +177,7 @@ This section details how to manage users and their access rights within your SAP
 The BTP Trial landscape only supports default SAP-managed identity providers. Users originating from a custom IAS tenant cannot be used as platform users to access or log in to the BTP Trial environment.
 
 ### 3.1. Import Business Users into SAP Cloud Identity.
-  1. Download user data file [IAS-business-users.csv](https://github.com/AbdelkaderDe/DSAG-TechXChange-XP260/releases/download/v0.1.0-btp-trial-workshop/IAS-business-users.csv)
+  1. Download user data file [IAS-business-users.csv](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.0/IAS-business-users.csv)
   2. Open your web browser and navigate to your IAS tenant's administration console. The URL typically looks like https://<your_tenant_id>.accounts.ondemand.com/admin.
   3. Enter your administrator credentials and log in.
   2. From the main Dashboard, click on the **Import Users** tile.
@@ -361,7 +361,7 @@ By the end of this step, the Secure Incident Management application will be succ
 
 ### 5.2. Download and Import the Project
 1. Download the project file secure-incident-management.tar from the following link:
-  👉 [Download Secure Incident Management Project](https://github.com/AbdelkaderDe/DSAG-TechXChange-XP260/releases/download/v0.1.0-btp-trial-workshop/secure-incident-management.tar)
+  👉 [Download Secure Incident Management Project](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.0/secure-incident-management.tar)
 2. Save the file locally on your machine. This archive will be imported into SAP Business Application Studio in the next step.
 3. In the BAS Explorer pane, click **Import** Project.
 4. Select the secure-incident-management.tar file from your local machine and import it.
