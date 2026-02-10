@@ -82,7 +82,7 @@ annotate AdminService with @(requires: 'admin');
 ### 🪜 Step 1: Login as Alice (Support User) 
 
 - Access SAP Build Work Zone.
-- Login with alice.jones@acme.com.
+- Login with alice.jones@bestrun.com.
 - Navigate to the Incident Management application.
 
 ### 🪜 Step 2: Exploit Modifying an Incident
@@ -128,7 +128,7 @@ annotate AdminService with @(requires: 'admin');
 ### 🪜 Step 5: Test with Another User
 
 - ▶️ Action:
-  - Log out as Alice and log in as bob.smith@acme.com (another support user).
+  - Log out as Alice and log in as bob.smith@bestrun.com (another support user).
   - Repeat the update and delete actions on any incidents.
   - 
 - ✅ Result: ❌ The system allows Bob to perform the same unauthorized updates and deletions, confirming that all support users have unrestricted access to all open incidents.
@@ -186,10 +186,10 @@ File: `db/data/sap.capire.incidents-Incidents.csv`
 
 ```
 ID,customer_ID,title,urgency_code,status_code,assignedTo
-3b23bb4b-4ac7-4a24-ac02-aa10cabd842c,1004155,Inverter not functional,H,C,bob.smith@acme.com
-3a4ede72-244a-4f5f-8efa-b17e032d01ee,1004161,No current on a sunny day,H,N,bob.smith@acme.com
-3ccf474c-3881-44b7-99fb-59a2a4668418,1004161,Strange noise when switching off Inverter,M,N,alice.jones@acme.com
-3583f982-d7df-4aad-ab26-301d4a157cd7,1004100,Solar panel broken,H,I,alice.jones@acme.com
+3b23bb4b-4ac7-4a24-ac02-aa10cabd842c,1004155,Inverter not functional,H,C,bob.smith@bestrun.com
+3a4ede72-244a-4f5f-8efa-b17e032d01ee,1004161,No current on a sunny day,H,N,bob.smith@bestrun.com
+3ccf474c-3881-44b7-99fb-59a2a4668418,1004161,Strange noise when switching off Inverter,M,N,alice.jones@bestrun.com
+3583f982-d7df-4aad-ab26-301d4a157cd7,1004100,Solar panel broken,H,I,alice.jones@bestrun.com
 3583f982-d7df-4aad-ab45-301d4a157cc7,1004100,Door lock broken,H,N,
 
 ```
@@ -407,9 +407,9 @@ This section outlines the steps to confirm that the remediation for the Horizont
 
 ### 🪜 Step 2: Login as Alice (Support User)
 - ▶️ Action:
-  - Access SAP Build Work Zone and log in with alice.jones@acme.com. (Note: Make sure to refresh the application first.)
+  - Access SAP Build Work Zone and log in with alice.jones@bestrun.com. (Note: Make sure to refresh the application first.)
   - In the incident list, locate an incident assigned to Alice (e.g., "Strange noise when switching off Inverter").
-  - Confirm the 'Assigned To' column displays alice.jones@acme.com.
+  - Confirm the 'Assigned To' column displays alice.jones@bestrun.com.
   - Click on the incident to open its details.
   - Click "Edit", modify the title (e.g., change to "UPDATED BY ALICE - Test"), add a conversation entry, and save.
 - ✅ Result:
