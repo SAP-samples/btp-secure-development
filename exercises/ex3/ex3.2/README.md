@@ -26,7 +26,8 @@ In this exercise, you will extend the local audit-logging setup from [Exercise 3
 
 * Completed [Exercise 3.1 - Audit Logging for Sensitive Data Access in Local Development](../ex3.1/README.md).
 * SAP Build Work Zone, standard edition configured and accessible.
-* The SAP Audit Log Viewer service has already been subscribed to in your SAP BTP subaccount with the standard plan.
+* The **SAP Audit Log Viewer** service must be subscribed to in your SAP BTP subaccount (standard plan). If not already done, follow [Step 2. Set Up Subscriptions] (https://github.com/SAP-samples/btp-secure-development/tree/main/exercises/ex0#step-2-set-up-subscriptions).
+* 
 
 ## 🚨 2. Vulnerable Code
 Your existing [data-privacy.cds](../ex3.1/srv/data-privacy.cds) file only covers the Customers and Addresses entities. However, it is missing annotations for the Incidents entity and its conversation element. This gap can lead to significant privacy and compliance risks.
