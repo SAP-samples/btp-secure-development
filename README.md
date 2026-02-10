@@ -36,7 +36,9 @@ Please complete the following setup **before the workshop**:
 
 - **[Getting Started](exercises/ex0#getting-started)** – Set up your environment and initial deployment.
 
-> 💡 **Tip:** Some exercises require switching between user accounts. Use an **Incognito (Private)** browser window to avoid authentication conflicts.
+> 💡 **Tip:**
+> - Some exercises require switching between user accounts. Use an **Incognito (Private)** browser window to avoid authentication conflicts.
+> - This workshop was tested with the Edge web browser. For a better experience, we recommend using Edge.
 
 ## 💻Exercises
 
