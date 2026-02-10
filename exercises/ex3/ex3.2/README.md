@@ -28,7 +28,7 @@ In this exercise, you will extend the local audit-logging setup from [Exercise 3
 * Subscribed to all services listed in [Step 2. Set Up Subscriptions](https://github.com/SAP-samples/btp-secure-development/tree/main/exercises/ex0#step-2-set-up-subscriptions) including:
   **SAP Audit Log Viewer service** (subscription plan : free).
 * **SAP Audit Log Service** entitlement assigned to your subaccount (standard plan). [Learn more about entitlements.](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/00aa2c23479d42568b18882b1ca90d79.html)
-* SAP Build Work Zone, standard edition configured and accessible.
+* **SAP Build Work Zone, standard edition** configured and accessible.
 * Completed [Exercise 3.1 - Audit Logging for Sensitive Data Access in Local Development](../ex3.1/README.md).
 
 ## 🚨 2. Vulnerable Code
