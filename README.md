@@ -70,11 +70,7 @@ No known issues.
 
 ## 🤝 How to Get Support
 
-This repository content is designed for the DSAG-TechExchange workshop, where **live support** will be available from facilitators during the event.
-
-### During the Workshop
-
-Support is available directly from the instructors.
+**live support** will be available from facilitators during the event.
 
 ### 🕐 Outside the Workshop
 
