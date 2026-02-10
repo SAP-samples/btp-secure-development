@@ -186,11 +186,11 @@ The BTP Trial landscape only supports default SAP-managed identity providers. Us
   5. Click **Import** button on the message box **Confirm**.
 
 ### 3.2. Set initial Password for Business users
-  1. In the **User Management** screen, search for and click on a user (e.g., alice.jones@acme.com).
+  1. In the **User Management** screen, search for and click on a user (e.g., alice.jones@bestrun.com).
   2. Navigate to the **Authentication** tab.
   3. Click on **Password Details**.
   4. Click on **Set Initial** to manually type a temporary password (e.g.,dsagH@0326) that you will give to the user.
-  5. Repeat this for all imported users (bob.smith@acme.com,david.miller@acme.com).
+  5. Repeat this for all imported users (bob.smith@bestrun.com,david.miller@bestrun.com).
 
 ### 3.3. Map IAS Users to the BTP Subaccount
 
@@ -200,13 +200,13 @@ To authorize the users you just created in IAS, you must register them within yo
 2. In the left navigation pane, expand **Security** and select **Users**.
 3. Click the **Create** button to open the user mapping dialog.
 4. Identity Provider: Select your IAS tenant from the dropdown (e.g., xxxxxx.accounts.ondemand.com(business users)).
-5. User Name, E-mail: Enter the user's email address (e.g., alice.jones@acme.com). This must match the email used in the IAS import.
+5. User Name, E-mail: Enter the user's email address (e.g., alice.jones@bestrun.com). This must match the email used in the IAS import.
 6. Click **Create** to finalize.
 
 Repeat this process for each of the following users:
-  * bob.smith@acme.com (Support user)
-  * alice.jones@acme.com (Support user)
-  * david.miller@acme.com (Admin user)
+  * bob.smith@bestrun.com (Support user)
+  * alice.jones@bestrun.com (Support user)
+  * david.miller@bestrun.com (Admin user)
 
 To add your IAS admin user (Trial user email):
   * Repeat the steps above
@@ -501,17 +501,17 @@ To test real-world access control patterns, you'll work with dedicated test acco
 
 | User | Role |
 |------|------|
-| `bob.smith@acme.com` | Support User |
-| `alice.jones@acme.com` | Support User |
-| `david.miller@acme.com` | Admin User |
+| `bob.smith@bestrun.com` | Support User |
+| `alice.jones@bestrun.com` | Support User |
+| `david.miller@bestrun.com` | Admin User |
 
 To assign role collections using the SAP BTP Cockpit:
 
 1. Navigate to your subaccount and go to **Security → Users**.
 2. Select the target user.
 3. In the details panel on the right, click **Assign Role Collection**.
-4. Assign `bob.smith@acme.com` and `alice.jones@acme.com` to the **support (incident-management xxxtrial-dev)**** role collection.
-5. Assign `david.miller@acme.com` to the  **admin (incident-management xxxtrial-dev)** role collection.
+4. Assign `bob.smith@bestrun.com` and `alice.jones@bestrun.com` to the **support (incident-management xxxtrial-dev)**** role collection.
+5. Assign `david.miller@bestrun.com` to the  **admin (incident-management xxxtrial-dev)** role collection.
 
 <p align="center">
   <img src="images/btp-assign-role-collections-business-users.png" alt="" width="900"/>
@@ -639,9 +639,9 @@ The Incident Management application launchpad should now open.
 
 | User | Role | Password |
 |------|------|----------|
-| `alice.jones@acme.com` | Support | `your initial password` |
-| `bob.smith@acme.com` | Support | `your initial password` |
-| `david.miller@acme.com` | Admin | `your initial password` |
+| `alice.jones@bestrun.com` | Support | `your initial password` |
+| `bob.smith@bestrun.com` | Support | `your initial password` |
+| `david.miller@bestrun.com` | Admin | `your initial password` |
 
 <p align="center">
   <img src="images/btp-subaccount-open-SAP-Build-Work-Zone-sign-out.png" alt="" width="900"/>
