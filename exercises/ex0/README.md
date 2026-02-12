@@ -294,7 +294,7 @@ Before creating the instance, you need to know where it will be mapped.
     * Click **Create Instance**.
    
 * **Step 8. Verify Instance Creation**
-    * Wait for the instance to be provisioned. This may take several minutes.
+    * Wait for the instance to be provisioned, which may take several minutes. You may have to manually refresh the browser page to see the status update.
     * Once complete, you will see your instance (e.g., hanadb) listed in the All Instances view with a 🟢 **Running** status (green indicator).
     * Confirm the Type shows SAP HANA Database and the instance is ready for use.
 
