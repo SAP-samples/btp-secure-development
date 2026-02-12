@@ -153,7 +153,7 @@ Establishing trust allows SAP Cloud Identity Services to act as your central ide
 ### 2.4. Subscribe to SAP Build Work Zone, Standard Edition (Trial)
 ⚠️ **Note:** 
 SAP Work Zone, standard edition requires a custom Identity Authentication Service (IAS) tenant for user authentication. You cannot use the default SAP ID Service as the identity provider for Work Zone, standard edition. 
-A dedicated custom IAS tenant must be configured and connected to your SAP BTP subaccount before you can set up and use Work Zone.
+That is why in the previous step, you configured a dedicated custom IAS tenant and connected it to your SAP BTP subaccount.
 
   1. Return to the **Service Marketplace** in your subaccount.
   2. Search for **"SAP Build Work Zone, standard edition"**.
