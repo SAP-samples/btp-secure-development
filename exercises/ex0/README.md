@@ -107,7 +107,7 @@ In this step, you will set up the required application subscriptions
 ### 2.1. Subscribe to SAP HANA Cloud (Trial)
   1. From your Trial Subaccount (Cockpit), look at the navigation menu on the left.
   2. Click on **Services->Service Marketplace**.
-  3. Search for **"SAP HANA Cloud"** and select it from the results.
+  3. Search for **"SAP HANA Cloud"**.
   4. Click the three-dot menu **(...)** next to the service name, then choose Create.
   5. In the Create Subscription wizard:
       * Confirm Service is set to "SAP HANA Cloud"
@@ -118,7 +118,7 @@ In this step, you will set up the required application subscriptions
 ### 2.2. Subscribe to Cloud Identity Services (Trial)
 Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscription and instance setup are simplified:
   1. Return to the **Service Marketplace** in your subaccount.
-  2. Search for **"Cloud Identity Services"** and select it from the results.
+  2. Search for **"Cloud Identity Services"**.
   3. Click the three-dot menu **(...)** next to the service name, then choose Create.
   4. In the Create Subscription wizard:
       * Confirm Service is set to **"Cloud Identity Services"**
@@ -156,7 +156,7 @@ SAP Work Zone, standard edition requires a custom Identity Authentication Servic
 A dedicated custom IAS tenant must be configured and connected to your SAP BTP subaccount before you can set up and use Work Zone.
 
   1. Return to the **Service Marketplace** in your subaccount.
-  2. Search for **"SAP Build Work Zone, standard edition"** and select it.
+  2. Search for **"SAP Build Work Zone, standard edition"**.
   3. Click the three-dot menu **(...)** next to the service name, then choose **Create**.
   4. In the Create Subscription wizard:
       * Confirm Service is set to "SAP Build Work Zone, standard edition"
