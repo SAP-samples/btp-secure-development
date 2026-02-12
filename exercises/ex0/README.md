@@ -113,7 +113,7 @@ In this step, you will set up the required application subscriptions
       * Confirm Service is set to "SAP HANA Cloud"
       * Select **Subscription Plan: tools** (free Trial plan)
       * Click **Create**.
-  6. After subscription complete, Confirm **Status = "Subscribed"**
+  6. Once the subscription process has finished, confirm that the **Status** is **"Subscribed"**
 
 ### 2.2. Subscribe to Cloud Identity Services (Trial)
 Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscription and instance setup are simplified:
@@ -124,7 +124,7 @@ Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscr
       * Confirm Service is set to **"Cloud Identity Services"**
       * Select **Subscription Plan: default**.
       * Click **Create** to initiate the subscription.
-  5. After subscription complete, Confirm **Status = "Subscribed"**
+  5. Once the subscription process has finished, confirm that the **Status** is **"Subscribed"**
   6. Activate your IAS Administration Console access via email:
       * Check your registered email inbox (including spam/junk folders) for an activation message from SAP Cloud Identity Services.
       * Click the activation link in the email, follow the prompts to set a secure password, and log into the Identity Authentication Administration Console to confirm access.
@@ -161,7 +161,7 @@ A dedicated custom IAS tenant must be configured and connected to your SAP BTP s
   4. In the Create Subscription wizard:
       * Confirm Service is set to "SAP Build Work Zone, standard edition"
       * Select **Subscription Plan: standard**
-  5. After subscription complete, Confirm **Status = "Subscribed"**
+  5. Once the subscription process has finished, confirm that the **Status** is **"Subscribed"**
 
 At the conclusion of [Step 2: Set Up Subscriptions](#step-2-set-up-subscriptions), your Subscriptions tab will display the complete list of successfully subscribed required services, exactly as illustrated in the following image:
 
