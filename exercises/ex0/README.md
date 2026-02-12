@@ -191,8 +191,8 @@ The BTP Trial landscape only supports default SAP-managed identity providers. Us
   1. In the **User Management** screen, search for and click on a user (e.g., alice.jones@bestrun.com).
   2. Navigate to the **Authentication** tab.
   3. Click on **Password Details**.
-  4. Click on **Set Initial** to manually type a temporary password (e.g.,dsagH@0326) that you will give to the user.
-  5. Repeat this for all imported users (bob.smith@bestrun.com,david.miller@bestrun.com).
+  4. Click on **Set Initial** to manually type a temporary password (e.g., dsagH@0326) that you will give to the user.
+  5. Repeat this for all imported users (bob.smith@bestrun.com, david.miller@bestrun.com).
 
 ### 3.3. Map IAS Users to the BTP Subaccount
 
