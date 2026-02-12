@@ -218,9 +218,6 @@ To add your IAS admin user (Trial user email):
 ### 3.4. Configure Role Collections
 To ensure you have full administrative rights to manage the development tools, assign the following role collections to your identity-provider user admin.
 
-⚠️ **Note:** 
-If your custom IAS admin user is not listed in the users' list, click **Create** to add the user first, ensuring you select your custom Identity Provider from the dropdown.
-
 1. In the **SAP BTP Cockpit**, go to your **trial subaccount**.
 2. On the left-side menu, navigate to **Security → Users**.
 3. Click your IAS admin-user email to open the details page.
