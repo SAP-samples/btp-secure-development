@@ -108,7 +108,7 @@ In this step, you will set up the required application subscriptions
   1. From your Trial Subaccount (Cockpit), look at the navigation menu on the left.
   2. Click on **Services->Service Marketplace**.
   3. Search for **"SAP HANA Cloud"**.
-  4. Click the three-dot menu **(...)** next to the service name, then choose Create.
+  4. Click the three-dot menu **(...)** next to the service name, then choose **Create**.
   5. In the Create Subscription wizard:
       * Confirm Service is set to "SAP HANA Cloud"
       * Select **Subscription Plan: tools** (free Trial plan)
@@ -119,7 +119,7 @@ In this step, you will set up the required application subscriptions
 Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscription and instance setup are simplified:
   1. Return to the **Service Marketplace** in your subaccount.
   2. Search for **"Cloud Identity Services"**.
-  3. Click the three-dot menu **(...)** next to the service name, then choose Create.
+  3. Click the three-dot menu **(...)** next to the service name, then choose **Create**.
   4. In the Create Subscription wizard:
       * Confirm Service is set to **"Cloud Identity Services"**
       * Select **Subscription Plan: default**.
@@ -161,6 +161,7 @@ That is why in the previous step, you configured a dedicated custom IAS tenant a
   4. In the Create Subscription wizard:
       * Confirm Service is set to "SAP Build Work Zone, standard edition"
       * Select **Subscription Plan: standard**
+      * Click on **Create**
   5. Once the subscription process has finished, confirm that the **Status** is **"Subscribed"**
 
 At the conclusion of [Step 2: Set Up Subscriptions](#step-2-set-up-subscriptions), your Subscriptions tab will display the complete list of successfully subscribed required services, exactly as illustrated in the following image:
@@ -218,7 +219,7 @@ To add your IAS admin user (Trial user email):
 To ensure you have full administrative rights to manage the development tools, assign the following role collections to your identity-provider user admin.
 
 ⚠️ **Note:** 
-If your custom IAS admin user is not listed in the users' list, click Create to add the user first, ensuring you select your custom Identity Provider from the dropdown.
+If your custom IAS admin user is not listed in the users' list, click **Create** to add the user first, ensuring you select your custom Identity Provider from the dropdown.
 
 1. In the **SAP BTP Cockpit**, go to your **trial subaccount**.
 2. On the left-side menu, navigate to **Security → Users**.
