@@ -617,10 +617,11 @@ The Incident Management application launchpad should now open.
 
 #### 6.6.1. Check and Start SAP HANA Database
   1. In the left navigation menu, go to **Instances and Subscriptions** → **Applications**.
-  2. Locate the **`incident-management-srv`** application.
-  3. Check the **Status**:
+  2. Click on **`SAP HANA Cloud`** application.
+  3. If prompted for login, select your **Sign in with alternative identity provider**.
+  4. Check the **State**:
      - 🟢 **Running** → Proceed to Section 6.6.2
-     - 🔴 **Stopped** → Select the database → choose **Start**
+     - 🔴 **Stopped** → Select the database → Clik on menu **'...'** , then choose **Start**
          - Monitor the Status column closely, it will first change to "Starting" (yellow indicator), then to 🟢 **Running** after 2–5 minutes.
          - Do not proceed until it fully reaches Running, as the database needs time to initialize.
 
