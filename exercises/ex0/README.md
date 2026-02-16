@@ -620,7 +620,7 @@ The Incident Management application launchpad should now open.
   2. Click on **`SAP HANA Cloud`** application.
   3. If prompted for login, select your **Sign in with alternative identity provider**.
   4. Check the **State**:
-     - 🟢 **Running** → Proceed to Section 6.6.2
+     - 🟢 **Running** → Proceed to [Section 6.6.2](#662-check-and-start-the-incident-management-srv-application)
      - 🔴 **Stopped** → Select the database → Clik on menu **'...'** , then choose **Start**
          - Monitor the Status column closely, it will first change to "Starting" (yellow indicator), then to 🟢 **Running** after 2–5 minutes.
          - Do not proceed until it fully reaches Running, as the database needs time to initialize.
