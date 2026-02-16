@@ -81,7 +81,8 @@ The solution diagram illustrates the key components and their interactions withi
     <br>
     <b></b>
   </p>
-4. Click on the button "Go To Your TZrial Account"
+
+4. Click on the button "Go To Your Trial Account".
 5. Click on the subaccount tile (typically labeled trial) to open the SAP BTP Cockpit for your trial subaccount.
   <p align="center">
     <img src="images/trial-global-account.png" alt="" width="900"/>
