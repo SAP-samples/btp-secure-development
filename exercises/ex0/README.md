@@ -75,7 +75,10 @@ The solution diagram illustrates the key components and their interactions withi
 2. If you don't have a trial account:
     - Click Sign Up and follow the prompts to create your account using your email.
     - Verify your email address to complete registration.
-3. When prompted, select US East as the region .
+
+3. When prompted, choose US East as your default region, since it typically provides better latency and connectivity to Europe than other non‑European regions.
+
+can offer better overall latency and connectivity to Europe
   <p align="center">
     <img src="images/btp-trial-regions.png" alt="" width="900"/>
     <br>
