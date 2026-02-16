@@ -1,5 +1,5 @@
 # Exercise 2 - SQL Injection
-Vulnerability: [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/)
+Vulnerability: [A03:2025-Injection](https://owasp.org/Top10/2025/A05_2025-Injection/)
 
 ## Table of Contents
 - [📖 1. Overview](./README.md#--1-overview-)
