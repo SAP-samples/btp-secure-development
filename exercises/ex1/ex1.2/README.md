@@ -1,5 +1,5 @@
 # Exercise 1.2 - Vertical Privilege Escalation
-Vulnerability: [A01:2021 – Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
+Vulnerability: [A01:2025 – Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 
 ## Table of Contents
 - [📖 1. Overview](./README.md#-1-overview)
