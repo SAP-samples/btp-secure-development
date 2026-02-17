@@ -311,4 +311,4 @@ In these exercises, you have learned how to:
     * JavaScript Handlers (e.g., `onModify`) for fine-grained business logic enforcement.
   - Test Security Rules by validating both allowed and denied operations for each role.
     
-👉 Next up: [Exercise 2 - SQL injection](../../ex2/README.md), where we address critical  [OWASP Top 10 2021 list (A03)](https://owasp.org/Top10/A03_2021-Injection/).
+👉 Next up: [Exercise 2 - SQL injection](../../ex2/README.md), where we address the critical security risk [OWASP Top 10 A05:2025 Injection](https://owasp.org/Top10/2025/A05_2025-Injection/).
