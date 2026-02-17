@@ -264,7 +264,7 @@ Before creating the instance, you need to know where it will be mapped.
 4. In the new tab, click **Create Instance**.
 
 * **Step 1. Type:**
-    * Select **SAP HANA Cloud** in **Instance Type**
+    * Select **SAP HANA Database** in **Instance Type**
     * Select **Configure manually** from the **Instance Configuration** options.
     * Click **Next** Step.
 
