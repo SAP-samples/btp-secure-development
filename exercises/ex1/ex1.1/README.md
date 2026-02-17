@@ -382,6 +382,8 @@ AssignedTo=Assigned To
 ## ✅ 5. Verification
 This section outlines the steps to confirm that the remediation for the Horizontal Privilege Escalation vulnerability has been successfully implemented. The goal is to verify that support users can only modify or delete incidents assigned to them or unassigned incidents, and that updates or deletions on closed incidents are blocked.
 
+⚠️ Before deploying the application, ensure the SAP HANA Database is **Running**, Refer to section [6.6.1. Check and Start SAP HANA Databasese](#66-verify-access-with-different-users)
+
 ### 🪜 Step 1: Deploy the Updated Application to Cloud Foundry
 - Open a terminal window.
   - In the Explorer Pane, right-click on the project name to open the context menu.
