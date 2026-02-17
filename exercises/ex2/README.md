@@ -22,7 +22,7 @@ In this exercise you will test the application locally in the development enviro
 ### ⚠️ Why This Matters
 
  * **Business Impact:** Successful SQL Injection attacks can compromise the integrity and confidentiality of critical data, leading to unauthorized data disclosure, manipulation, or deletion.
- * **Compliance Risk:** Violates [OWASP Top 10 A03](https://owasp.org/Top10/A03_2021-Injection/) and GDPR/PCI DSS requirements for input validation.
+ * **Compliance Risk:** Violates [A05:2025 Injection](https://owasp.org/Top10/2025/A05_2025-Injection/) and GDPR/PCI DSS requirements for input validation.
  * **Security Risk:** Malicious actors could exfiltrate sensitive data (e.g., credit card numbers) or bypass authorization controls.
 
 ### 🎯 Key Learning Objectives
