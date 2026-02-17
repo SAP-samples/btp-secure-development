@@ -102,8 +102,7 @@ class ProcessorService extends cds.ApplicationService {
 ### 🪜 Step 1: Login as Alice (Support User) 
 - Access SAP Build Work Zone.
 - Login with alice.jones@bestrun.com
-- . This user is set up from the previous exercise.
-- Navigate to the Incident Management application.
+- Navigate to the Incident Management application
 
 ### 🪜 Step 2: Exploit Closing High-Urgency Incident
 - ▶️ Action: 
