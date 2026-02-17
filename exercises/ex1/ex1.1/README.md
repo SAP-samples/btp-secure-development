@@ -181,8 +181,6 @@ entity Incidents : cuid, managed {
 - Ensure the following data is included in the file:
 
 File: `db/data/sap.capire.incidents-Incidents.csv`
- *   Add the 'assignedTo' column and assign incidents to our test users.
- *   **Note:** Use the actual user IDs from your identity provider (IdP). For this workshop, we'll use their email addresses as a stand-in.
 
 ```
 ID,customer_ID,title,urgency_code,status_code,assignedTo
@@ -193,6 +191,9 @@ ID,customer_ID,title,urgency_code,status_code,assignedTo
 3583f982-d7df-4aad-ab45-301d4a157cc7,1004100,Door lock broken,H,N,
 
 ```
+ *   This adds the 'assignedTo' column and assigns incidents to our test users.
+ *   **Note:** Use the actual user IDs from your identity provider (IdP). For this workshop, we'll use their email addresses as a stand-in.
+
 
 ### 🪜 Step 3: Implement Service-Level Security
 
