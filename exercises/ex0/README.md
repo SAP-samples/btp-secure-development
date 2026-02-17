@@ -264,22 +264,22 @@ Before creating the instance, you need to know where it will be mapped.
 4. In the new tab, click **Create Instance**.
 
 #### 4.2.1 Type:
-    * Select **SAP HANA Database** in **Instance Type**
-    * Select **Configure manually** from the **Instance Configuration** options.
-    * Click **Next** Step.
+  - Select **SAP HANA Database** in **Instance Type**
+  - Select **Configure manually** from the **Instance Configuration** options.
+  - Click **Next** Step.
 
 #### 4.2.2 SAP HANA Database: General
-    * **Instance Name**: e.g., hanadb.
-    * **Administrator Password:** Set a strong password for the DBADMIN user.
-    * Click **Next** Step.
+    - **Instance Name**: e.g., hanadb.
+    - **Administrator Password:** Set a strong password for the DBADMIN user.
+    - Click **Next** Step.
 
 #### 4.2.3  SAP HANA Database: Sizes and Availability**
-    * Leave default trial sizing and availability settings unchanged.
-    * **Next** Step.
+    - Leave default trial sizing and availability settings unchanged.
+    - **Next** Step.
 
 #### 4.2.4 SAP HANA Database: Connections**
-    * Under **Allowed Connections**, select **Allow all IP addresses**. This is required for trial and development access.
-    * Click **Next** Step.
+    - Under **Allowed Connections**, select **Allow all IP addresses**. This is required for trial and development access.
+    - Click **Next** Step.
 
 #### 4.2.5 SAP HANA Database: Advanced Settings**
     * Keep default settings for **Version** and **Additional Features**.
