@@ -262,25 +262,25 @@ Before creating the instance, you need to know where it will be mapped.
 2. Find **SAP HANA Cloud** under the **Subscriptions tab** and click the **Go to Application** icon to open **SAP HANA Cloud Central**.
 3. If you are prompted for login, choose the **custom IDP** and login with your admin user.
 4. In the new tab, click **Create Instance**.
-#### 4.2.1 Type
+#### 4.2.1. Type
 - Select **SAP HANA Database** in **Instance Type**
 - Select **Configure manually** from the **Instance Configuration** options.
 - Click **Next** Step.
 
-#### 4.2.2 SAP HANA Database: General
+#### 4.2.2. SAP HANA Database: General
 - **Instance Name**: e.g., `hanadb`.
 - **Administrator Password:** Set a strong password for the `DBADMIN` user.
 - Click **Next** Step.
 
-#### 4.2.3 SAP HANA Database: Sizes and Availability
+#### 4.2.3. SAP HANA Database: Sizes and Availability
 - Leave default trial sizing and availability settings unchanged.
 - **Next** Step.
 
-#### 4.2.4 SAP HANA Database: Connections
+#### 4.2.4. SAP HANA Database: Connections
 - Under **Allowed Connections**, select **Allow all IP addresses**. This is required for trial and development access.
 - Click **Next** Step.
 
-#### 4.2.5 SAP HANA Database: Advanced Settings
+#### 4.2.5. SAP HANA Database: Advanced Settings
 - Keep default settings for **Version** and **Additional Features**.
 - **Instance Mapping**
   - Click **Add Mapping**.
@@ -288,15 +288,15 @@ Before creating the instance, you need to know where it will be mapped.
   - Paste your **Organization ID** and **Space ID** (copied from [Step 4.1 Identify your Organization and Space IDs](#41-identify-your-organization-and-space-ids)) into the **Environment Instance ID** and **Environment Group** fields.
   - Click **Next** Step.
 
-#### 4.2.6 Data Lake: General
+#### 4.2.6. Data Lake: General
 - Keep default settings for **Create Data Lake**.
 - Click **Review and Create**.
 
-#### 4.2.7 Review New Instances
+#### 4.2.7. Review New Instances
 - Verify all details, especially the Instance Mapping configuration.
 - Click **Create Instance**.
 
-#### 4.2.8 Verify Instance Creation
+#### 4.2.8. Verify Instance Creation
 - In the left navigation menu, go to **Instances and Subscriptions** → **Applications**.
 - Click on **`SAP HANA Cloud`** application.
 - If prompted for login, select your **Sign in with alternative identity provider**.
