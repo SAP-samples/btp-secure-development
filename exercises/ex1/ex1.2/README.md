@@ -284,7 +284,7 @@ cf deploy mta_archives/incident-management_1.0.0.mtar
 
 ### 📌 Verification Summary
 
-The remediation successfully addresses Vertical Privilege Escalation by
+The remediation successfully addresses Vertical Privilege Escalation by:
 
 **1. Restricting Support Users:**
 
@@ -303,7 +303,7 @@ The remediation successfully addresses Vertical Privilege Escalation by
 
 ## 📌 6. Summary
 
-In these exercises, you have learned how to
+In these exercises, you have learned how to:
   - Mitigate Vertical Privilege Escalation by explicitly defining admin-only operations in `@restrict` rules.
   - Leverage CAP’s Role-Based Access Control (RBAC) to separate support and admin tasks.
   - Combine Declarative and Imperative Security for comprehensive protection:
