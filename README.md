@@ -71,7 +71,7 @@ No known issues.
 
 ## 🤝 How to Get Support
 
-**live support** will be available from facilitators during the event.
+**Live support** will be available from facilitators during the event.
 
 ### 🕐 Outside the Workshop
 
