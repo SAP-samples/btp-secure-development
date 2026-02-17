@@ -51,8 +51,8 @@ Every exercise module is a self-contained lab focused on a specific vulnerabilit
 - 🛡️ **4. Remediation:** The corrected version of the code that patches the vulnerability, along with an explanation of the fix.
 - ✅ **5. Verification:** A simple procedure to confirm that the patch has successfully mitigated the vulnerability and the exploit no longer works.
 - 📌 **6. Summary:** A practical recap that consolidates the exercise outcomes with actionable takeaways.
-
-💡In step 4, you will replace the vulnerable version of the code with a corrected version. In most cases you will have to open the corrected file and copy the full content into the development environment. If you only copy the code snippet explaining the fixes, your application won't work. To copy the content of the file, use the button "Copy raw file" in the toolbar above the file content.
+  
+- 💡In step 4, you will replace the vulnerable version of the code with a corrected version. In most cases you will have to open the corrected file and copy the full content into the development environment. If you only copy the code snippet explaining the fixes, your application won't work. To copy the content of the file, use the button "Copy raw file" in the toolbar above the file content.
 
 This structure is designed to help you understand a vulnerability from an attacker's perspective and a defender's, see how it can impact a CAP application, and learn actionable steps to mitigate it with SAP BTP best practices. 
 
