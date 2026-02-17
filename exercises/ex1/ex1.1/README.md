@@ -192,9 +192,7 @@ ID,customer_ID,title,urgency_code,status_code,assignedTo
 
 ```
  *   This adds the 'assignedTo' column and assigns incidents to our test users.
- *   **Note:** Use the actual user IDs from your identity provider (IdP). For this workshop, we'll use their email addresses as a stand-in.
-
-
+ 
 ### 🪜 Step 3: Implement Service-Level Security
 
 - Copy the contents of [services.cds](./srv/services.cds) into your project’s **srv/services.cds** file.
