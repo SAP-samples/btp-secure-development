@@ -37,7 +37,7 @@ Please complete the following setup **before the workshop**:
 - **[Getting Started](exercises/ex0#getting-started)** – Set up your environment and initial deployment.
 
 > 💡 **Tip:**
-> - [Exercise 3.2 - Security Event Monitoring in SAP BTP Production Environment (Optional - requires production landscape)](exercises/ex3/ex3.2/README.md) requires a production environment to run correctly. To test it, begin with a clean setup by following the [Getting Started](exercises/ex0#getting-started) instructions directly in the production landscape — do not reuse your trial environment.
+> - [Exercise 3.2 - Security Event Monitoring in SAP BTP Production Environment (Optional)](exercises/ex3/ex3.2/README.md) requires a production environment to run correctly. To test it, begin with a clean setup by following the [Getting Started](exercises/ex0#getting-started) instructions directly in the production landscape — do not reuse your trial environment.
 > - Some exercises require switching between user accounts. Use an **Incognito (Private)** browser window to avoid authentication conflicts.
 > - This workshop was tested with the Edge web browser. For a better experience, we recommend using Edge.
 
