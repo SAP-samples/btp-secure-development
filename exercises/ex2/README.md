@@ -235,7 +235,7 @@ Authorization: Basic {{username}}:{{password}}
 
 ``` 
 
-✅ Exploitation Successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
+✅ Exploitation successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
 
     
 ### 📌Critical Vulnerability Summary
