@@ -468,7 +468,7 @@ This section evaluates the implementation of audit logging and data protection i
   user: 'alice',
   time: 2025-08-29T22:54:27.493Z
 ```
-- ✅ Audit logs generate a **SecurityEvent** entry for the unauthorized write attempt.
+- ✅ Audit log generates a **SecurityEvent** entry for the unauthorized write attempt.
 - ✅ No **PersonalDataModified** entry is created.
 
 
