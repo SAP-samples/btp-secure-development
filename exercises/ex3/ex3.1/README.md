@@ -445,7 +445,7 @@ This section evaluates the implementation of audit logging and data protection i
   - Change the username to 'alice'. The password should be empty.
   - Go to line 13 and and click on 'Send Request' to run the 'POST {{server}}/odata/v4/admin/Customers' request.
 
-- ✅ Result: Audit logs generate **SecurityEvent** for one customer entity. In your log, the timestamp matches the current timestamp.
+- ✅ Result: Audit log generates a **SecurityEvent** for one customer entity. In your log, the timestamp matches the current timestamp.
 ```
 [odata] - POST /odata/v4/admin/Customers 
 [error] - 403 - Error: Forbidden
