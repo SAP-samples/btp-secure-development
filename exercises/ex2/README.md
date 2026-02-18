@@ -371,6 +371,6 @@ Whenever there’s user input involved:
 - 🎉 **Congratulations!**
     You have successfully remediated the critical risk [A05:2025 Injection](https://owasp.org/Top10/2025/A05_2025-Injection/) vulnerability and fortified your application against one of the most critical security risks. Your application now follows secure coding best practices that prevent attacker-controlled input from compromising your database. 
 
-👉 Next up: [Exercise 3 - Security Logging and Monitoring Failures](../ex3/README.md), where we address the critical risk [A09:2025 Security Logging & Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/) risks by implementing CAP's audit logging framework to detect unauthorized data access, track sensitive information flow, and ensure regulatory compliance through comprehensive security monitoring in enterprise environments.
+👉 Next up: [Exercise 3 - Security Logging and Monitoring Failures](../ex3/README.md), where we address the critical [A09:2025 Security Logging & Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/) risks by implementing CAP's audit logging framework to detect unauthorized data access, track sensitive information flow, and ensure regulatory compliance through comprehensive security monitoring in enterprise environments.
 
 
