@@ -490,4 +490,4 @@ In this exercise, you have learned how:
 
 🎉 Congratulations! You have successfully remediated the [A09:2025 Security Logging & Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/) and transformed your application into an enterprise-grade, audit-compliant system ready for production use and regulatory scrutiny.
 
-# 👉 Next up: [Exercise 3.2 - Security Event Monitoring in SAP BTP Production Environment](../ex3.2/README.md), where we take these audit logs beyond local testing and validate them in a production-grade enterprise environment.
+// 👉 Next up: [Exercise 3.2 - Security Event Monitoring in SAP BTP Production Environment](../ex3.2/README.md), where we take these audit logs beyond local testing and validate them in a production-grade enterprise environment.
