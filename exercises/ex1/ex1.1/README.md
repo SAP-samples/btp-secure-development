@@ -144,6 +144,12 @@ annotate AdminService with @(requires: 'admin');
 The fix requires both database schema changes and service-level security implementation.
 
 ### 🪜 Step 1: Add Assignment Tracking to Database Schema
+- 💡 Tip: Use GitHub's "Copy Raw File" function to easily copy the code (see screenshot below).
+  <p align="center">
+    <img src="images/github-copy-raw-button.png" alt="" width="900"/>
+    <br>
+    <b></b>
+  </p>
 
 - Copy the contents of [schema.cds](./db/schema.cds) into your project’s db/schema.cds file.
 - Ensure the following corrected code is included in the file:
