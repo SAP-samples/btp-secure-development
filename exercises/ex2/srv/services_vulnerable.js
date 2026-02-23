@@ -73,7 +73,7 @@ try {
       } catch (error) {
         // Log full error internally but don't expose details
         cds.log('security').error(
-          `Blocked potential SQLi attempt: ${error.message.split('')[0]}`
+          `Blocked potential SQL injection attempt: ${error.message.split('')[0]}`
         );
         
         // Return clean error without stack trace in production
