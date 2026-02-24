@@ -224,7 +224,7 @@ module.exports = {ProcessorService, AdminService};
 
 **Why this is vulnerable:**
 - ❌ **No Input Validation:** The user-supplied customerID is concatenated directly into the SQL query without validation, making it possible for an attacker to inject malicious SQL code.
-- ❌ **Lack of Parameterized Queries:** The raw SQL query does not use parameter binding or prepared statements, leaving the query structure exposed to manipulation.
+- ❌ **Parenthesized Tagged Template Method:** This approach is also vulnerable because parentheses force immediate evaluation of the template literal into a raw string before it reaches the tag/SQL builder—effectively making it behave like string concatenation and enabling injection.
 
 ## 💥 3. Exploitation
 
@@ -266,8 +266,17 @@ Authorization: Basic {{username}}:{{password}}
 ... other method
 
 ``` 
-  
-- This file contains three HTTP requests:
+- This file contains multiple HTTP requests grouped into three logical test categories (across three query methods):
+* **Test 1:** A legitimate request to retrieve a specific customer.
+Sends a normal customerID (1004100) using each method (concat, tagged, and safe) to verify expected behavior (one matching row returned).
+
+* **Test 2:** A malicious request that demonstrates a SQL Injection vulnerability.
+Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
+
+* **Test 3:** A SQL Injection using multiple SQL statements.
+Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure implementations could allow destructive behavior, while the safe method neutralizes the input through parameterization.
+
+
   - Test 1: A legitimate request to retrieve a specific customer.
   - Test 2: A malicious request that demonstrates a SQL Injection vulnerability.
   - Test 3: A SQL Injection using multiple SQL statements.
