@@ -18,6 +18,10 @@ service ProcessorService {
 annotate ProcessorService.Incidents with @odata.draft.enabled; 
 annotate ProcessorService with @(requires: ['support', 'admin']);
 
+/**
+ * Service used by administrators to manage customers and incidents.
+ */
+
 service AdminService {
   @restrict: { grant: '*', to: 'admin' }
   @odata
@@ -31,7 +35,7 @@ service AdminService {
   @tags: ['security', 'vulnerable']
   @summary: 'Returns customer data using various query construction methods (for security testing only)'
   
-function fetchCustomer(
+  function fetchCustomer(
     customerID: String,
     /*
      * Query construction method:
