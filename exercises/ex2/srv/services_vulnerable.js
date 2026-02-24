@@ -58,34 +58,130 @@ class ProcessorService extends cds.ApplicationService {
   }
 }
 // AdminService Implementation
+/**
+ * AdminService Class
+ * This service handles administrative operations, including fetching customer data.
+ * It demonstrates different methods of constructing SQL queries, highlighting
+ * both vulnerable and secure approaches.
+ */
 class AdminService extends cds.ApplicationService {
+  /**
+   * Initialize the service
+   * Sets up event handlers for service operations
+   */
   init() {
-    // ✅ VULNERABLE: fetchCustomer (SQL Injection)
+    /**
+     * Event handler for the 'fetchCustomer' operation
+     * This method demonstrates different approaches to constructing SQL queries
+     * and handling the results.
+     *
+     * @param {Object} req - The request object containing customerID and method
+     */
     this.on('fetchCustomer', async (req) => {
-      const { customerID } = req.data;
-      
-    // VULNERABLE CODE: Direct string interpolation in query
-      const query = `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
-try {
-      const results = await cds.run(query);        
-      return results;
+      // Extract customerID and method from the request data
+      // Default to 'concat' method if not specified
+      const { customerID, method = 'concat' } = req.data;
 
-      } catch (error) {
-        // Log full error internally but don't expose details
-        cds.log('security').error(
-          `Blocked potential SQL injection attempt: ${error.message.split('')[0]}`
-        );
-        
-        // Return clean error without stack trace in production
-        return req.reject(400, 'Invalid customer identifier');
+      /**
+       * ❌ VULNERABILITY 1: Direct String concatenation method
+       * This method directly interpolates user input into the SQL query,
+       * creating a significant SQL injection vulnerability.
+       */
+      if (method === 'concat') {
+        console.log('⚠️ Using INSECURE string concatenation method.');
+        // ❌ CRITICAL: User input is directly embedded in SQL query
+        // This allows for SQL injection attacks
+        const query = `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
+
+        try {
+          // Execute the vulnerable query
+          return await cds.run(query);
+        } catch (error) {
+          // Log the error and reject the request
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.reject(400, 'Invalid customer identifier');
+        }
       }
-    });
 
-    return super.init();
+      /**
+       ❌ VULNERABILITY 2: Parenthesized tagged template method
+       * This method is vulnerable because parentheses cause immediate evaluation
+       * of the template, similar to string concatenation.
+       */
+      if (method === 'tagged') {
+        console.log('⚠️ Using INSECURE parenthesized tagged template method.');
+
+        /**
+         * Tagged template function for SQL query construction
+         * This function is designed to prevent SQL injection, but parentheses
+         * cause immediate evaluation, defeating its purpose.
+         *
+         * @param {Array<string>} strings - Array of string literals from the template
+         * @param {...any} values - Array of values to be substituted into the template
+         * @returns {string} The constructed SQL query
+         */
+        const sql = (strings, ...values) => {
+          console.log('Received strings:', strings);
+          console.log('Received values:', values);
+
+          // ❌ DETECT: Parentheses used - strings is already a plain string!
+          // This indicates that the template was evaluated before reaching this function
+          if (typeof strings === 'string') {
+            console.log('❌ PARENTHESES DETECTED: strings is plain string, not array!');
+            // ❌ CRITICAL: Returning the already-interpolated string directly
+            // This makes the query vulnerable to SQL injection
+            return strings;
+          }
+        };
+
+        // ❌ CRITICAL: PARENTHESES cause immediate evaluation!
+        // The template is evaluated before reaching the sql function
+        // This creates a vulnerable query string
+        const vulnerableQuery =
+          sql(`SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`);
+
+        console.log('❌ Vulnerable query constructed:', vulnerableQuery);
+
+        try {
+          // Execute the vulnerable query
+          const results = await cds.run(vulnerableQuery);
+          console.log('✅ Results count:', results.length);
+          return results;
+        } catch (error) {
+          console.error('❌ Error:', error.message);
+          // Log the error and reject the request
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
+
+      /**
+       * SECURE: Parameterized query method
+       * This method uses CAP's fluent API to create a parameterized query
+       * which automatically sanitizes user input and prevents SQL injection.
+       */
+      if (method === 'safe') {
+        console.log('✅ Using SECURE parameterized query method.');
+
+        try {
+          // ✅ SECURE: Parameterized query using CAP's fluent API
+          // This approach automatically sanitizes input and prevents SQL injection
+          // Use the CDS entity name, not the DB table name/full path
+          const query = SELECT.from('Customers').where({ ID: customerID });
+          const results = await cds.run(query);
+          return results;
+        } catch (error) {
+          // Log the error and reject the request
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
+
+      // Handle unknown methods
+      // If an unknown method is provided, return an error
+      return req.error(400, `Unknown method: ${method}`);
+    });
   }
 }
-// Export both services
-module.exports = {
-  ProcessorService,
-  AdminService
-};
+
+module.exports = { ProcessorService, AdminService};
