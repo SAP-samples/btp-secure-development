@@ -105,14 +105,70 @@ const cds = require('@sap/cds');
 // AdminService Implementation
 class AdminService extends cds.ApplicationService {
   init() {
-    // ❌ VULNERABLE: fetchCustomer (SQL Injection)
     this.on('fetchCustomer', async (req) => {
-      const { customerID } = req.data;
+      const { customerID, method = 'concat' } = req.data;
 
-      // ❌ VULNERABLE CODE: // Direct string embedding in query
-      const query = `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
-      const results = await cds.run(query);
-      return results;
+      if (method === 'concat') {
+        // ❌ VULNERABILITY 1: Direct string interpolation
+        console.log('⚠️ Using INSECURE string concatenation method.');
+        const query = `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
+
+        try {
+          return await cds.run(query);
+        } catch (error) {
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.reject(400, 'Invalid customer identifier');
+        }
+      }
+
+      if (method === 'tagged') {
+        console.log('⚠️ Using INSECURE parenthesized tagged template method.');
+
+        const sql = (strings, ...values) => {
+          console.log('Received strings:', strings);
+          console.log('Received values:', values);
+
+          // ❌ DETECT: Parentheses used - strings is already a plain string!
+          if (typeof strings === 'string') {
+            console.log('❌ PARENTHESES DETECTED: strings is plain string, not array!');
+            // Return the already-interpolated string directly (VULNERABLE!)
+            return strings;
+          }
+        };
+
+        // ❌ CRITICAL: PARENTHESES cause immediate evaluation!
+        const vulnerableQuery =
+          sql(`SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`);
+
+        console.log('❌ Vulnerable query constructed:', vulnerableQuery);
+
+        try {
+          const results = await cds.run(vulnerableQuery);
+          console.log('✅ Results count:', results.length);
+          return results;
+        } catch (error) {
+          console.error('❌ Error:', error.message);
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
+
+      if (method === 'safe') {
+        console.log('✅ Using SECURE parameterized query method.');
+
+        try {
+          // ✅ Use parameterized query — input is automatically sanitized
+          // Use the CDS entity name, not the DB table name/full path
+          const query = SELECT.from('Customers').where({ ID: customerID });
+          const results = await cds.run(query);
+          return results;
+        } catch (error) {
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
+
+      return req.error(400, `Unknown method: ${method}`);
     });
 
     return super.init();
