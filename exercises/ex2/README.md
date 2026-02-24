@@ -267,20 +267,15 @@ Authorization: Basic {{username}}:{{password}}
 ... other method
 
 ``` 
-- This file contains multiple HTTP requests grouped into three logical test categories (across three query methods):
-* **Test 1:** A legitimate request to retrieve a specific customer.
-Sends a normal customerID (1004100) using each method (concat, tagged, and safe) to verify expected behavior (one matching row returned).
+This file contains multiple HTTP requests grouped into three logical test categories (across three query methods):
+  - **Test 1:** A legitimate request to retrieve a specific customer.
+  Sends a normal customerID (1004100) using each method (concat, tagged, and safe) to verify expected behavior (one matching row returned).
 
-* **Test 2:** A malicious request that demonstrates a SQL Injection vulnerability.
-Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
+  - **Test 2:** A malicious request that demonstrates a SQL Injection vulnerability.
+  Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
 
-* **Test 3:** A SQL Injection using multiple SQL statements.
-Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure implementations could allow destructive behavior, while the safe method neutralizes the input through parameterization.
-
-
-  - Test 1: A legitimate request to retrieve a specific customer.
-  - Test 2: A malicious request that demonstrates a SQL Injection vulnerability.
-  - Test 3: A SQL Injection using multiple SQL statements.
+  - **Test 3:** A SQL Injection using multiple SQL statements.
+  Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure implementations could allow destructive behavior, while the safe method neutralizes the input through parameterization.
 
 ### 🪜 Step 2: Exploit the SQL Injection Vulnerability
 - ▶️ Action:
