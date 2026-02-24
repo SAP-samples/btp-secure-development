@@ -223,8 +223,9 @@ module.exports = {ProcessorService, AdminService};
 ```
 
 **Why this is vulnerable:**
-- ❌ **No Input Validation:** The user-supplied customerID is concatenated directly into the SQL query without validation, making it possible for an attacker to inject malicious SQL code.
-- ❌ **Parenthesized Tagged Template Method:** This approach is also vulnerable because parentheses force immediate evaluation of the template literal into a raw string before it reaches the tag/SQL builder—effectively making it behave like string concatenation and enabling injection.
+
+- ❌ **Direct String concatenation method:** The user-supplied customerID is concatenated directly into the SQL query without validation, making it possible for an attacker to inject malicious SQL code.
+- ❌ **Parenthesized tagged template method:** This approach is also vulnerable because parentheses force immediate evaluation of the template literal into a raw string before it reaches the tag/SQL builder—effectively making it behave like string concatenation and enabling injection.
 
 ## 💥 3. Exploitation
 
