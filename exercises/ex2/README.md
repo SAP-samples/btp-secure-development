@@ -457,13 +457,16 @@ Authorization: Basic {{username}}:{{password}}
 - ▶️ Action: Execute the **Test C3** by clicking on "Send Request" above line 42:
 
 ```
-  GET  {{server}}/odata/v4/admin/fetchCustomer
+  ### 🛡️ Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
+  GET {{server}}/odata/v4/admin/fetchCustomer
   Content-Type: application/json
   Authorization: Basic {{username}}:{{password}}
-
+  
   {
-     "customerID": "1004100'; SELECT * from sap_capire_incidents_Customers;-- "
+    "customerID": "1004100'; DELETE FROM sap_capire_incidents_Customers;--",
+    "method": "safe"
   }
+
 ```
 - ✅ Result:
   - All malicious payloads fail to return unintended data or alter query behavior.
