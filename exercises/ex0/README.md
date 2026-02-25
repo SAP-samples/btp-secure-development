@@ -534,7 +534,7 @@ First, ensure SAP Build Work Zone has the latest content from your HTML5 applica
 2. For **SAP Build Work Zone, standard edition**, click the **Go to Application** icon
 3. When prompted for authentication, log in using your admin credentials from the Custom Identity Provider (IdP).
 4. In the left navigation menu, choose the **Channel Manager** icon.
-5. Choose **Fetch Updated Content** to sync the latest application metadata.
+5. Choose **Update Content** to sync the latest application metadata.
 
 <p align="center">
   <img src="images/work-zone-content-manager.png" alt="" width="900"/>
