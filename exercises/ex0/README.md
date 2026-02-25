@@ -362,11 +362,11 @@ By the end of this step, the Secure Incident Management application will be succ
 </p>
 
 ### 5.2. Download and Import the Project
-1. Download the project file secure-incident-management.tar from the following link:
+1. Download the project file secure-incident-management.zip from the following link:
   👉 [Download Secure Incident Management Project](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.0/secure-incident-management.zip)
 2. Save the file locally on your machine. This archive will be imported into SAP Business Application Studio in the next step.
 3. In the BAS Explorer pane, click **Import** Project.
-4. Select the secure-incident-management.tar file from your local machine and import it.
+4. Select the secure-incident-management.zip file from your local machine and import it.
 <p align="center">
   <img src="images/BAS-import-project.png" alt="" width="900"/>
   <br>
