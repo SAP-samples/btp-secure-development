@@ -297,6 +297,14 @@ Before creating the instance, you need to know where it will be mapped.
 - Click **Create Instance**.
 
 #### 4.2.8. Verify Instance Creation
+
+- After the instance creation wizard closes, you should remain on the SAP HANA Cloud Central dashboard.
+- Wait for Completion: The status will initially show as Creating or Starting.
+- You can click the Auto-Refresh button 🔄 .
+- Wait until the status indicator turns 🟢 Running.
+
+⚠️ **Note:** 
+If you navigated away or closed the tab, you can return to this page : 
 - In the left navigation menu, go to **Instances and Subscriptions** → **Applications**.
 - Click on **`SAP HANA Cloud`** application.
 - If prompted for login, select your **Sign in with alternative identity provider**.
