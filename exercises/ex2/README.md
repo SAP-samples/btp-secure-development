@@ -289,7 +289,7 @@ This file contains multiple HTTP requests grouped into three logical test catego
 - ▶️ Action:
   - Open the `sql-injection-demo.http` file in your editor.
   - Confirm in your `package.json` file that the user `incident.support@tester.sap.com` is assigned the `admin` role under the `cds.requires.[development].auth.users` configuration.
-  - In `sql-injection-demo.http`, navigate to Test 2 to look up customer information and click on Send Request (added by the editor in the line above the GET statement).
+  - In `sql-injection-demo.http`, navigate to **Test A2: True-clause injection (concat)** to look up customer information and click on Send Request below line 31.
   
 ``` 
   ### 🚨 Test A2: True-clause injection (concat)
@@ -299,9 +299,12 @@ This file contains multiple HTTP requests grouped into three logical test catego
   GET {{server}}/odata/v4/admin/fetchCustomer
   Content-Type: application/json
   Authorization: Basic {{username}}:{{password}}
+  
   {
-    "customerID": "1004100' OR '1'='1"
+    "customerID": "1004100' OR '1'='1",
+    "method": "concat"
   }
+
 ```
 - ✅ Result:
 
@@ -314,19 +317,19 @@ This file contains multiple HTTP requests grouped into three logical test catego
 
 ✅ Exploitation successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
 
-- ▶️ Action: In `sql-injection-demo.http`, navigate to Test B2 to look up customer information and click on Send Request.
+- ▶️ Action: In `sql-injection-demo.http`, navigate to **Test B2: True-clause injection (tagged)** to look up customer information and click on Send Request below line 55.
 
 ``` 
-  ### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
-  ### Action: Inject malicious payload ' OR '1'='1 (always true)
-  ### Expected: Returns ALL customer records
-  ### Result: Full database exposure vulnerability
-  GET {{server}}/odata/v4/admin/fetchCustomer
-  Content-Type: application/json
-  Authorization: Basic {{username}}:{{password}}
-  {
-    "customerID": "1004100' OR '1'='1"
-  }
+### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "tagged"
+}
+
 ```
 - Result:
 
@@ -353,31 +356,38 @@ Now that you've identified the SQL Injection vulnerability, let's fix it by impl
 - Ensure the following corrected code is included in the file:
 
 ```
-      /**
-       * SECURE: Parameterized query method
-       * This method uses CAP's fluent API to create a parameterized query
-       * which automatically sanitizes user input and prevents SQL injection.
-       */
-      if (method === 'safe') {
-        console.log('✅ Using SECURE parameterized query method.');
+ * SECURE: Parameterized query method
+ * This method uses CAP's fluent API to create a parameterized query
+ * which automatically sanitizes user input and prevents SQL injection.
+ */
+  if (method === 'safe') {
+    console.log('✅ Using SECURE parameterized query method.');
+  
+    try {
+      // ✅ SECURE: Parameterized query using CAP's fluent API[2]
+      // This approach automatically sanitizes input and prevents SQL injection
+      // User input is bound as a parameter, never interpolated into SQL structure
+      const query = SELECT.from('Customers').where({ ID: customerID });
+      
+      console.log('✅ Secure parameterized query constructed (input treated as literal parameter)');
+      
+      // Execute the parameterized query
+      const results = await cds.run(query);
+      console.log('✅ Results count:', results.length);
+      return results;
+    } catch (error) {
+      console.error('❌ Error:', error.message);
+      // Log the error and reject the request
+      cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+      return req.error(400, 'Invalid customer identifier');
+    }
+  }
 
-        try {
-          // ✅ SECURE: Parameterized query using CAP's fluent API
-          // This approach automatically sanitizes input and prevents SQL injection
-          const query = SELECT.from('Customers').where({ ID: customerID });
-          const results = await cds.run(query);
-          return results;
-        } catch (error) {
-          // Log the error and reject the request
-          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
-          return req.error(400, 'Invalid customer identifier');
-        }
-      }
 ```
 - The updated services.js now includes a secure version of the **fetchCustomer** function. 
 
 ### Key Changes:
-  - ✅ Replaced raw SQL string concatenation with CAP’s SELECT.from().where() syntax.
+  - ✅ Added raw SQL string concatenation with CAP’s SELECT.from().where() syntax.
   - ✅ Input is automatically parameterized and sanitized by the framework.
   - ✅ Eliminates the risk of SQL Injection.
 
@@ -464,7 +474,6 @@ The remediation successfully addresses the SQL Injection vulnerability by:
 - **Eliminating String Concatenation:** Replaced unsafe SQL string building with CAP’s parameterized query API (SELECT.from().where({...})).
 - **Neutralizing Malicious Inputs:** Attack payloads (e.g., ' OR '1'='1) are treated as data values, not executable code.
 - **Preserving Legitimate Functionality:** Valid requests continue to work as expected without disruption.
-- **Leveraging Framework Security:** CAP’s built-in query translation to CQN (Core Query Language) and parameter binding prevent SQL Injection at runtime.
 
 ## 📌 6. Summary
 
