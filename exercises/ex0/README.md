@@ -78,7 +78,6 @@ The solution diagram illustrates the key components and their interactions withi
 
 3. When prompted, choose US East as your default region, since it typically provides better latency and connectivity to Europe than other non‑European regions.
 
-can offer better overall latency and connectivity to Europe
   <p align="center">
     <img src="images/btp-trial-regions.png" alt="" width="900"/>
     <br>
