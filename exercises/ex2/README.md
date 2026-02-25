@@ -273,7 +273,8 @@ This file contains multiple HTTP requests grouped into three logical test catego
   Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
 
   - **Test 3:** A SQL Injection using multiple SQL statements.
-  Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure query could allow destructive behavior, while the safe method neutralizes the input through parameterization.
+  Demonstrates how the safe method neutralizes a destructive multi-statement payload ("1004100'; DELETE FROM ...;--") through proper parameterization.
+  For data protection, this payload is executed exclusively with the safe method; the vulnerable methods (concat,tagged) are intentionally excluded from this test.
 
 ### 🪜 Step 2: Exploit the SQL Injection Vulnerability
 - ▶️ Action:
