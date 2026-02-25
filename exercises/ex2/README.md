@@ -237,34 +237,35 @@ We will exploit the SQL Injection vulnerability in a local development environme
   - Open the file "sql-injection-demo.http".
   
 ```
-@server=http://localhost:4004
-@username=incident.support@tester.sap.com // admin role
-@password=initial
+@server = http://localhost:4004
+@username = incident.support@tester.sap.com
+@password = initial
 
-### ✅ Test 1: Legitimate Customer Lookup
-### Action: Normal request with valid customer ID
-### Expected: Returns single customer record
-### Result: System returns data for customer ID 1004100
+### 🔒 SQL INJECTION DEMO (matches your current services.js)
+# =====================================================
+# Methods implemented in services.js:
+#   - concat  → ❌ INSECURE: interpolates customerID into SQL string
+#   - tagged  → ❌ INSECURE: “parenthesized tagged template” helper
+#              BUT it’s called like sql("...already interpolated..."),
+#              so it returns the raw SQL string (still injectable)
+#   - safe    → ✅ SECURE: parameterized query (WHERE ID = ?) + [customerID]
+# =====================================================
+
+
+### ============================================
+### PART A — VULNERABLE (method=concat)
+### ============================================
+
+### ✅ Test A1: Legitimate Request (concat) → expect 1 row
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "customerID": "1004100"
+  "customerID": "1004100",
+  "method": "concat"
 }
-  
-### 🚨 Test 2: SQL Injection True-Clause Attack
-### Action: Inject malicious payload ' OR '1'='1
-### Expected: Returns ALL customer records
-### Result: Full database exposure vulnerability
-GET {{server}}/odata/v4/admin/fetchCustomer
-Content-Type: application/json
-Authorization: Basic {{username}}:{{password}}
-
-{
-  "customerID": "1004100' OR '1'='1"
-}
-... other method
+... other methods
 
 ``` 
 This file contains multiple HTTP requests grouped into three logical test categories (across three query methods):
