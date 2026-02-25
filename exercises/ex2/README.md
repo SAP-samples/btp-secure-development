@@ -266,13 +266,13 @@ Authorization: Basic {{username}}:{{password}}
 
 ``` 
 This file contains multiple HTTP requests grouped into three logical test categories (across three query methods):
-  - **Test 1:** A legitimate request to retrieve a specific customer.
+  - **Test 1: A legitimate request to retrieve a specific customer:**
     Sends a normal customerID (1004100) using each method (concat, tagged, and safe) to verify expected behavior (one matching row returned).
 
-  - **Test 2:** A malicious request that demonstrates a SQL Injection vulnerability.
+  - **Test 2: A malicious request that demonstrates a SQL Injection vulnerability :**
     Uses a true-clause payload ("1004100' OR '1'='1") to show that the insecure methods (concat and tagged) may return many or all rows, while the safe method treats it as literal input.
 
-  - **Test 3:** A SQL Injection using multiple SQL statements.
+  - **Test 3: A SQL Injection using multiple SQL statements :**
     Demonstrates how the safe method neutralizes a destructive multi-statement payload ("1004100'; DELETE FROM ...;--") through proper parameterization.
     For data protection, this payload is executed exclusively with the safe method; the vulnerable methods (concat,tagged) are intentionally excluded from this test.
 
