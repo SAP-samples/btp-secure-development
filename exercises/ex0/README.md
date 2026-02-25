@@ -257,10 +257,11 @@ Before creating the instance, you need to know where it will be mapped.
   8. Save both IDs for [Step 4.2 Create the SAP HANA Cloud Instance](#42-create-the-sap-hana-cloud-instance).
 
 ### 4.2. Create the SAP HANA Cloud Instance
-1. Navigate to **Services > Instances and Subscriptions**.
-2. Find **SAP HANA Cloud** under the **Subscriptions tab** and click the **Go to Application** icon to open **SAP HANA Cloud Central**.
-3. If you are prompted for login, choose the **custom IDP** and login with your admin user.
-4. In the new tab, click **Create Instance**.
+1. Go back to the Trial Subaccount (Cockpit) page
+2. Navigate to **Services > Instances and Subscriptions**.
+3. Find **SAP HANA Cloud** under the **Subscriptions tab** and click the **Go to Application** icon to open **SAP HANA Cloud Central**.
+4. If you are prompted for login, choose the **custom IDP** and login with your admin user.
+5. In the new tab, click **Create Instance**.
 #### 4.2.1. Type
 - Select **SAP HANA Database** in **Instance Type**
 - Select **Configure manually** from the **Instance Configuration** options.
