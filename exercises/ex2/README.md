@@ -277,6 +277,8 @@ This file contains multiple HTTP requests grouped into three logical test catego
   - **Test 3:** A SQL Injection using multiple SQL statements.
   Attempts a multi-statement payload ("1004100'; DELETE FROM ...;--") to demonstrate how insecure implementations could allow destructive behavior, while the safe method neutralizes the input through parameterization.
 
+Test 3: A SQL Injection using multiple SQL statements. Attempts a multi-statement payload ("1004100'; SELECT * FROM ...;--") to demonstrate how an insecure query can be tricked into appending extra SQL, while the safe method neutralizes this attack by treating the entire payload as a single literal parameter value.
+
 ### 🪜 Step 2: Exploit the SQL Injection Vulnerability
 - ▶️ Action:
   - Go to the integrated terminal. If you no longer have it open, right-click in the Explorer Pane on the project name to open the context menu. Then select the menu item "Open in Integrated Terminal".
