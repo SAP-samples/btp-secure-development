@@ -277,7 +277,7 @@ Before creating the instance, you need to know where it will be mapped.
 - **Next** Step.
 
 #### 4.2.4. SAP HANA Database: Connections
-- Under **Allowed Connections**, select **Allow all IP addresses**. This is required for trial and development access.
+- Under **Allowed Connections**, select **All IP addresses**. This is required for trial and development access.
 - Click **Next** Step.
 
 #### 4.2.5. SAP HANA Database: Advanced Settings
