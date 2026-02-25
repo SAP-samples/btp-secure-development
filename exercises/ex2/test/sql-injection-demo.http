@@ -29,7 +29,6 @@ Authorization: Basic {{username}}:{{password}}
 ### Action: Inject malicious payload ' OR '1'='1 (always true)
 ### Expected: Returns ALL customer records
 ### Result: Full database exposure vulnerability
-
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
