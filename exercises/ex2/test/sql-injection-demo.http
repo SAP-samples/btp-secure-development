@@ -2,47 +2,98 @@
 @username = incident.support@tester.sap.com
 @password = initial
 
-### 🔒 SQL INJECTION VULNERABILITY DEMO (CAP OData Service)
+### 🔒 SQL INJECTION DEMO (matches your current services.js)
 # =====================================================
-# VULNERABILITY: Unsafe string interpolation in `fetchCustomer` function
-# RISK: Full database exposure via SQL injection
-# ROOT CAUSE: Direct concatenation of user input into SQL query
-# FIX: Use parameterized queries (CAP's cds.parse.expr() or @restrict.where)
+# Methods implemented in services.js:
+#   - concat  → ❌ vulnerable: interpolates customerID into SQL string
+#   - tagged  → ❌ vulnerable: (parenthesized tagged template) helper returns raw SQL string (still injectable)
+#   - safe    → ✅ SECURE: parameterized query (WHERE ID = ?) + [customerID]
 # =====================================================
 
-### ✅ Test 1: Legitimate Request (Sanity Check)
-# Purpose: Verify normal functionality
-# Payload: Valid customerID
-# Expected: Single customer record (HTTP 200)
+
+### ============================================
+### PART A — VULNERABLE (method=concat)
+### ============================================
+
+### ✅ Test A1: Legitimate Request (concat) → expect 1 row
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "customerID": "1004100"
+  "customerID": "1004100",
+  "method": "concat"
 }
 
-### 🚨 Test 2: Basic SQL Injection (True-Clause Attack)
-# Payload: ' OR '1'='1
-# Expected: Returns ALL customer records (HTTP 200)
-# Impact: Unauthorized data access
+### 🚨 Test A2: True-clause injection (concat)
+### Action: Inject malicious payload ' OR '1'='1 (always true)
+### Expected: Returns ALL customer records
+### Result: Full database exposure vulnerability
+
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "customerID": "1004100' OR '1'='1"
+  "customerID": "1004100' OR '1'='1",
+  "method": "concat"
 }
 
-### 🚨 Test 3: Select-Based SQL Injection (Multi-Statement Attack)
-# Payload: '; SELECT * FROM sap_capire_incidents_Customers;--
-# Expected: 
-#   - CAP's SQLite adapter blocks multiple statements (HTTP 400)
-#   - Other databases (HANA/PostgreSQL) might execute both queries
+### ============================================
+### PART B — VULNERABLE (method=tagged) in your services.js
+### ============================================
+
+### ✅ Test B1: Legitimate Request (tagged) → expect 1 row
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "customerID": "1004100'; SELECT * FROM sap_capire_incidents_Customers;--"
+  "customerID": "1004100",
+  "method": "tagged"
+}
+
+### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "tagged"
+}
+
+
+### ============================================
+### PART C — SECURE (method=safe)
+### ============================================
+
+### ✅ Test C1: Legitimate Request (safe) → expect 1 row
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100",
+  "method": "safe"
+}
+
+### 🛡️ Test C2: Injection attempt (safe) → expect 0 rows (treated as literal parameter)
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "safe"
+}
+
+### 🛡️ Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100'; DELETE FROM sap_capire_incidents_Customers;--",
+  "method": "safe"
 }
