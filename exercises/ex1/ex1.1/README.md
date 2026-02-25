@@ -436,7 +436,7 @@ This section outlines the steps to confirm that the remediation for the Horizont
  
 ### 🪜 Step 4: Verify Alice Cannot Modify or Delete a Closed Incident that is on Alice's Name
 - Action:
-  - Locate a closed incident (e.g., one with status "Closed").
+  - Locate a closed incident (e.g., one with status "Closed") or close an incident on Alice's name
   - Click "Edit" and make changes.
   - Click "Save". If editing is not possible, attempt to select the incident and click "Delete".
 - ✅ Result:
