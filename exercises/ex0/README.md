@@ -5,7 +5,7 @@
 * **Duration:** 2 hours hands-on workshop
 * **What you'll build:** A simple SAP BTP application with security features
 * **Prerequisites:** Web browser, SAP BTP Trial Account
-* **Setup time:** ~30 minutes
+* **Setup time:** ~60 minutes
 * **Start here:** [Step 1: Set Up Your Trial Account](#step-1-set-up-your-trial-account)
 
 ## Set up Process flow Diagram
