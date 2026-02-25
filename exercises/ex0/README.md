@@ -299,8 +299,7 @@ Before creating the instance, you need to know where it will be mapped.
 #### 4.2.8. Verify Instance Creation
 
 - After the instance creation wizard closes, you should remain on the SAP HANA Cloud Central dashboard.
-- Wait for Completion: The status will initially show as Creating or Starting.
-- You can click the Auto-Refresh button 🔄 .
+- To monitor progress, click the Auto-Refresh button 🔄.
 - Wait until the status indicator turns 🟢 Running.
 
 ⚠️ **Note:** 
