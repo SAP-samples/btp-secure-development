@@ -244,13 +244,10 @@ We will exploit the SQL Injection vulnerability in a local development environme
 ### 🔒 SQL INJECTION DEMO (matches your current services.js)
 # =====================================================
 # Methods implemented in services.js:
-#   - concat  → ❌ INSECURE: interpolates customerID into SQL string
-#   - tagged  → ❌ INSECURE: “parenthesized tagged template” helper
-#              BUT it’s called like sql("...already interpolated..."),
-#              so it returns the raw SQL string (still injectable)
+#   - concat  → ❌ vulnerable: interpolates customerID into SQL string
+#   - tagged  → ❌ vulnerable: (parenthesized tagged template) helper returns raw SQL string (still injectable)
 #   - safe    → ✅ SECURE: parameterized query (WHERE ID = ?) + [customerID]
 # =====================================================
-
 
 ### ============================================
 ### PART A — VULNERABLE (method=concat)
