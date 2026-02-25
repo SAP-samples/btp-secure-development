@@ -1,4 +1,5 @@
 const cds = require('@sap/cds');
+const { SELECT } = cds.ql;
 
 class ProcessorService extends cds.ApplicationService {
   init() {
@@ -57,6 +58,8 @@ class ProcessorService extends cds.ApplicationService {
     this.changeUrgencyDueToSubject(incident);
   }
 }
+
+
 // AdminService Implementation
 /**
  * AdminService Class
@@ -87,21 +90,27 @@ class AdminService extends cds.ApplicationService {
        * This method directly interpolates user input into the SQL query,
        * creating a significant SQL injection vulnerability.
        */
-      if (method === 'concat') {
-        console.log('⚠️ Using INSECURE string concatenation method.');
-        // ❌ CRITICAL: User input is directly embedded in SQL query
-        // This allows for SQL injection attacks
-        const query = `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
+if (method === 'concat') {
+  console.log('⚠️ Using INSECURE string concatenation method.');
+  // ❌ CRITICAL: User input is directly embedded in SQL query
+  // This allows for SQL injection attacks
+  const vulnerableQuery =
+    `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
 
-        try {
-          // Execute the vulnerable query
-          return await cds.run(query);
-        } catch (error) {
-          // Log the error and reject the request
-          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
-          return req.reject(400, 'Invalid customer identifier');
-        }
-      }
+  console.log('❌ Vulnerable query constructed:', vulnerableQuery);
+
+  try {
+    // Execute the vulnerable query
+    const results = await cds.run(vulnerableQuery);
+    console.log('✅ Results count:', results.length);
+    return results;
+  } catch (error) {
+    console.error('❌ Error:', error.message);
+    // Log the error and reject the request
+    cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+    return req.error(400, 'Invalid customer identifier');
+  }
+}
 
       /**
        ❌ VULNERABILITY 2: Parenthesized tagged template method
@@ -160,22 +169,33 @@ class AdminService extends cds.ApplicationService {
        * This method uses CAP's fluent API to create a parameterized query
        * which automatically sanitizes user input and prevents SQL injection.
        */
-      if (method === 'safe') {
-        console.log('✅ Using SECURE parameterized query method.');
+      /**
+ * SECURE: Parameterized query method
+ * This method uses CAP's fluent API to create a parameterized query
+ * which automatically sanitizes user input and prevents SQL injection.
+ */
+if (method === 'safe') {
+  console.log('✅ Using SECURE parameterized query method.');
 
-        try {
-          // ✅ SECURE: Parameterized query using CAP's fluent API
-          // This approach automatically sanitizes input and prevents SQL injection
-          // Use the CDS entity name, not the DB table name/full path
-          const query = SELECT.from('Customers').where({ ID: customerID });
-          const results = await cds.run(query);
-          return results;
-        } catch (error) {
-          // Log the error and reject the request
-          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
-          return req.error(400, 'Invalid customer identifier');
-        }
-      }
+  try {
+    // ✅ SECURE: Parameterized query using CAP's fluent API[2]
+    // This approach automatically sanitizes input and prevents SQL injection
+    // User input is bound as a parameter, never interpolated into SQL structure
+    const query = SELECT.from('Customers').where({ ID: customerID });
+    
+    console.log('✅ Secure parameterized query constructed (input treated as literal parameter)');
+    
+    // Execute the parameterized query
+    const results = await cds.run(query);
+    console.log('✅ Results count:', results.length);
+    return results;
+  } catch (error) {
+    console.error('❌ Error:', error.message);
+    // Log the error and reject the request
+    cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+    return req.error(400, 'Invalid customer identifier');
+  }
+}
 
       // Handle unknown methods
       // If an unknown method is provided, return an error
