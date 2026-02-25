@@ -303,7 +303,7 @@ This file contains multiple HTTP requests grouped into three logical test catego
     "customerID": "1004100' OR '1'='1"
   }
 ```
-- Result:
+- ✅ Result:
 
 ```
 [odata] - GET /odata/v4/admin/fetchCustomer  
@@ -315,8 +315,6 @@ This file contains multiple HTTP requests grouped into three logical test catego
 ✅ Exploitation successful: The application returned the entire contents of the Customers table instead of just the record for customer ID 1004100.
 
 - ▶️ Action: In `sql-injection-demo.http`, navigate to Test B2 to look up customer information and click on Send Request.
-
-
 
 ``` 
   ### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
@@ -343,30 +341,38 @@ This file contains multiple HTTP requests grouped into three logical test catego
 ✅ Exploitation successful: 
   - Same vulnerability as concat method: ALL customer records returned.
   - Parentheses cause immediate template evaluation, defeating the intended parameterization protection.
-
-    
+   
 ### 📌Critical Vulnerability Summary
 - ❌ **Complete Data Breach:** Any authenticated user can extract the entire contents of the customer table.
-- ❌ **Insecure SQL Concatenation:** The services.js code uses direct string concatenation ('${customerID}') to build an SQL query instead of using parameterized queries.
+- ❌ **Insecure SQL Concatenation & Parenthesized Tagged :** The services.js code uses direct string concatenation ('${customerID}') to build an SQL query instead of using parameterized queries.
 - ❌ **Lack of Input Sanitization:** No validation or sanitization is performed on the customerID input parameter before it is used in the SQL query.
 
 ## 🛡️ 4. Remediation
 Now that you've identified the SQL Injection vulnerability, let's fix it by implementing secure database queries using CAP's built-in protections.
-- Copy the contents of [services.js](./srv/services.js) into your project’s srv/services.js file.
+- Open the contents of [services.js](./srv/services.js) into your project’s srv/services.js file.
 - Ensure the following corrected code is included in the file:
 
 ```
-// ✅ SECURE: Parameterized query using CAP’s fluent API
-this.on('fetchCustomer', async (req) => {
-  const { customerID } = req.data;
+      /**
+       * SECURE: Parameterized query method
+       * This method uses CAP's fluent API to create a parameterized query
+       * which automatically sanitizes user input and prevents SQL injection.
+       */
+      if (method === 'safe') {
+        console.log('✅ Using SECURE parameterized query method.');
 
-  // ✅ Use parameterized query — input is automatically sanitized
-const query = SELECT.from('Customers') // Use the CDS entity name, not the full path
-      .where({ ID: customerID });      
-
-  return results;
-});
-
+        try {
+          // ✅ SECURE: Parameterized query using CAP's fluent API
+          // This approach automatically sanitizes input and prevents SQL injection
+          const query = SELECT.from('Customers').where({ ID: customerID });
+          const results = await cds.run(query);
+          return results;
+        } catch (error) {
+          // Log the error and reject the request
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
 ```
 - The updated services.js now includes a secure version of the **fetchCustomer** function. 
 
@@ -382,42 +388,40 @@ This section outlines the steps to confirm that the remediation for the SQL Inje
 - Legitimate requests continue to function correctly and return expected results.
 - The application now correctly uses parameterized queries, preventing any manipulation of the query structure.
 
-### 🪜 Step 1: Test Legitimate Request (Sanity Check)
+### 🪜 Step 1: Test C1: Legitimate Request (safe) → expect 1 row
 - ▶️ Action:
-  - Stop the current execution of cds watch in the integrated terminal with Ctrl-C. Run the following commands from integrated terminal:
-
-```
-  cds build
-  cds deploy
-  cds watch
-```
-* 💡**Note:** Ensure the deployment includes the updated [services.js](./srv/services.js) file with the secure parameterized query implementation.
-
+ 💡**Note:** Ensure the deployment includes the updated [services.js](./srv/services.js) file with the secure parameterized query implementation.
 - Open the sql-injection-demo.http file.
-- Execute the **Test 1: Legitimate Request** by clicking on "Send Request" above line 17:
+- Execute the **✅ Test C1:** by clicking on "Send Request" below line 71:
 
 ```
-GET http://localhost:4004/odata/v4/admin/fetchCustomer
+GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
-Authorization: Basic incident.support@tester.sap.com:initial
+Authorization: Basic {{username}}:{{password}}
+
 {
-  "customerID": "1004100"
+  "customerID": "1004100",
+  "method": "safe"
 }
 ```
 - ✅ Result:
   - The system returns a single customer record for ID = 1004100.
   - This confirms that legitimate functionality remains intact after the fix.
 
-### 🪜 Step 2: Test Basic SQL Injection (True-Clause Attack)
+
+### 🪜 Step 2: Test C2: Injection attempt (safe) → expect 0 rows (treated as literal parameter)
 - ▶️ Action:
-  - Execute the **Test 2: Basic SQL Injection** by clicking on "Send Request" above line 29:
+  - Execute the **✅ Test C2:** by clicking on "Send Request" below line 81:
 ```
-  GET http://localhost:4004/odata/v4/admin/fetchCustomer
-  Content-Type: application/json
-  Authorization: Basic incident.support@tester.sap.com:initial
-  {
-    "customerID": "1004100' OR '1'='1"
-  }
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "safe"
+}
+[
 ```
 - Result:
 ```
@@ -439,8 +443,8 @@ Authorization: Basic incident.support@tester.sap.com:initial
 - ✅ The malicious payload ' OR '1'='1 is treated as a literal string value rather than executable SQL.
 - ✅ This confirms that the SQL Injection vulnerability has been successfully mitigated.
 
-### 🪜 Step 3: SQL Injection -  multiple sql statements
-- ▶️ Action: Execute the **Test 3** by clicking on "Send Request" above line 42:
+### 🪜 Step 3: Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
+- ▶️ Action: Execute the **Test C3** by clicking on "Send Request" above line 42:
 
 ```
   GET  {{server}}/odata/v4/admin/fetchCustomer
