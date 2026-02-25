@@ -283,7 +283,6 @@ This file contains multiple HTTP requests grouped into three logical test catego
   - Run the following commands from the integrated terminal:
 
 ```
-  cds build
   cds deploy
   cds watch
 ```
