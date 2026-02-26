@@ -339,7 +339,8 @@ This section evaluates the implementation of audit logging and data protection i
   - Confirming role-based access controls are enforced.
   - Verifying that audit logs record all API interactions, such as `SensitiveDataRead`, `PersonalDataModified`, and `SecurityEvent`.
 
-- Testing is performed locally in SAP Business Application Studio to validate that logs are correctly generated, masked, and compliant with enterprise security standards.
+- Testing is performed in both SAP Business Application Studio (local) and SAP BTP production landscapes (NOT trial). This validates that logs are properly generated, masked, and compliant with enterprise security standards.
+  Refer to [Exercise 3.2](./ex3.2/README.md) for production-level monitoring.
   
 ### Local Environment Setup
 
