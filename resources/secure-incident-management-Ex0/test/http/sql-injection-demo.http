@@ -1,0 +1,98 @@
+@server = http://localhost:4004
+@username = incident.support@tester.sap.com
+@password = initial
+
+### 🔒 SQL INJECTION DEMO (matches your current services.js)
+# =====================================================
+# Methods implemented in services.js:
+#   - concat  → ❌ vulnerable: interpolates customerID into SQL string
+#   - tagged  → ❌ vulnerable: (parenthesized tagged template) helper returns raw SQL string (still injectable)
+#   - safe    → ✅ SECURE: parameterized query (WHERE ID = ?) + [customerID]
+# =====================================================
+
+
+### ============================================
+### PART A — VULNERABLE (method=concat)
+### ============================================
+
+### ✅ Test A1: Legitimate Request (concat) → expect 1 row
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100",
+  "method": "concat"
+}
+
+### 🚨 Test A2: True-clause injection (concat)
+### Action: Inject malicious payload ' OR '1'='1 (always true)
+### Expected: Returns ALL customer records
+### Result: Full database exposure vulnerability
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "concat"
+}
+
+### ============================================
+### PART B — VULNERABLE (method=tagged) in your services.js
+### ============================================
+
+### ✅ Test B1: Legitimate Request (tagged) → expect 1 row
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100",
+  "method": "tagged"
+}
+
+### 🚨 Test B2: True-clause injection (tagged) → may return many/all rows
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "tagged"
+}
+
+
+### ============================================
+### PART C — SECURE (method=safe)
+### ============================================
+
+### ✅ Test C1: Legitimate Request (safe) → expect 1 row
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100",
+  "method": "safe"
+}
+
+### 🛡️ Test C2: Injection attempt (safe) → expect 0 rows (treated as literal parameter)
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100' OR '1'='1",
+  "method": "safe"
+}
+
+### 🛡️ Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
+GET {{server}}/odata/v4/admin/fetchCustomer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "customerID": "1004100'; DELETE FROM sap_capire_incidents_Customers;--",
+  "method": "safe"
+}
