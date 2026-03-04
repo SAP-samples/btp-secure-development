@@ -205,8 +205,15 @@ To authorize the users you just created in IAS, you must register them within yo
 2. In the left navigation pane, expand **Security** and select **Users**.
 3. Click the **Create** button to open the user mapping dialog.
 4. Identity Provider: Select your IAS tenant from the dropdown (e.g., xxxxxx.accounts.ondemand.com(business users)).
-5. User Name, E-mail: Enter the user's email address (e.g., alice.jones@bestrun.com). This must match the email used in the IAS import.
-6. Click **Create** to finalize.
+5. User Name, E-mail: Enter the user's email address in both fields (e.g., alice.jones@bestrun.com). The User Name and E-mail address must match each other and must also match the email used in the IAS import.
+
+ <p align="center">
+  <img src="images/btp-security-users.png" alt="" width="900"/>
+  <br>
+  <b></b>
+</p>
+
+7. Click **Create** to finalize.
 
 Repeat this process for each of the following users:
   * bob.smith@bestrun.com (Support user)
