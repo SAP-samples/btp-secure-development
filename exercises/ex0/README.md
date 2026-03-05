@@ -561,13 +561,26 @@ First, ensure SAP Build Work Zone has the latest content from your HTML5 applica
 
 Now, make your application available for inclusion in the Work Zone content catalog.
 
-1. In the left navigation menu, choose **Content Manager** → **Content Explorer**.
-2. Select the tile labeled **HTML5 Apps** with your subdomain name.
-3. In the items table, locate **incident-management** and select its checkbox.
-4. Choose **Add** to import the application into your content catalog.
+1. In the left navigation menu, choose **Content Manager**
+<p align="center">
+  <img src="images/workzone - ContentManager.png" alt="" width="900"/>
+  <br>
+  <b></b>
+</p>
+
+2. Click on **Content Explorer**
+<p align="center">
+  <img src="images/workzone - ContentExplorer.png" alt="" width="900"/>
+  <br>
+  <b></b>
+</p>
+
+3. Select the tile labeled **HTML5 Apps** with your subdomain name.
+4. In the items table, locate **incident-management** and select its checkbox.
+5. Choose **Add** to import the application into your content catalog.
 
 <p align="center">
-  <img src="images/work-zone-content-explorer-html5.png" alt="" width="900"/>
+  <img src="images/workzone - AddToCatalog.png" alt="" width="900"/>
   <br>
   <b></b>
 </p>
