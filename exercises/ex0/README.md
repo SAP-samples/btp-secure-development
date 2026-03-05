@@ -48,7 +48,7 @@
      
 ## Overview 
 
-In these hands-on exercises, we will be using the Incident Management Application, which is designed as a reference application for the [SAP BTP Developer's Guide](https://help.sap.com/docs/btp/btp-developers-guide/btp-developers-guide). It showcases best practices for developing applications on SAP Business Technology Platform (SAP BTP).
+In these hands-on exercises, we will be using the Incident Management Application, which is designed as a [reference application](https://github.com/capire/incidents) for the [SAP BTP Developer's Guide](https://help.sap.com/docs/btp/btp-developers-guide/btp-developers-guide). It showcases best practices for developing applications on SAP Business Technology Platform (SAP BTP).
 
 - ⚠️ **Note:** To keep this page open, right-click each link and choose **"Open link in new tab"**.
 
@@ -58,15 +58,6 @@ Bestrun, a leading electronics company, uses this application to manage customer
   2. A call center representative (processor) receives the call.
   3. The representative creates a new incident in the system based on the customer's complaint.
   4. The conversation details are recorded as part of the incident.
-
-### Solution Diagram
-The solution diagram illustrates the key components and their interactions within the Incident Management Application deployed on SAP Business Technology Platform (SAP BTP).
-
-  <p align="center">
-    <img src="images/solution-diagram-incident-management.png" alt="" width="900"/>
-    <br>
-    <b></b>
-  </p>
 
 ## Step 1. Set Up Your Trial Account
 
