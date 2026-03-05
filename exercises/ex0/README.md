@@ -291,7 +291,7 @@ Before creating the instance, you need to know where it will be mapped.
   - Click **Add Mapping**.
   - **Environment Type:** Keep default as **Cloud Foundry**.
   - Paste your **Organization ID** and **Space ID** (copied from [Step 4.1 Identify your Organization and Space IDs](#41-identify-your-organization-and-space-ids)) into the **Environment Instance ID** and **Environment Group** fields.
-  - Click **Next** Step.
+  - Click **Next Step**.
 
 #### 4.2.6. Data Lake: General
 - Keep default settings for **Create Data Lake**.
