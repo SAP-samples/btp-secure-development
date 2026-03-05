@@ -208,7 +208,7 @@ To authorize the users you just created in IAS, you must register them within yo
 5. **User Name, E-mail:** Enter the user's email address in both fields (e.g., alice.jones@bestrun.com). The User Name and E-mail address must match each other and must also match the email used in the IAS import.
 
  <p align="center">
-  <img src="images/btp-security-users.png" alt="" width="900"/>
+  <img src="images/btp-security-users.png" alt="" width="450"/>
   <br>
   <b></b>
 </p>
