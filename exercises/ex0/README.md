@@ -175,8 +175,10 @@ At the conclusion of [Step 2: Set Up Subscriptions](#step-2-set-up-subscriptions
 ## Step 3. Configure Users access
 This section details how to manage users and their access rights within your SAP BTP trial landscape, leveraging SAP Cloud Identity Services (Identity Authentication Service - IAS) as your identity provider.
 
+<--
 ⚠️ **Note:** 
 The BTP Trial landscape only supports default SAP-managed identity providers. Users originating from a custom IAS tenant cannot be used as platform users to access or log in to the BTP Trial environment.
+-->
 
 ### 3.1. Import Business Users into SAP Cloud Identity.
   1. Download user data file [IAS-business-users.csv](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.0/IAS-business-users.csv)
