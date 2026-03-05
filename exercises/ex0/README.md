@@ -441,7 +441,7 @@ You can deploy the application using one of two methods: **via the UI** or **via
   * In the Explorer view, find and expand the mta_archives folder.
   * Right-click on the generated .mtar file.
   * Select **Deploy MTA Archive**.
-  * On the **Cloud Foundry Sign and Targets** page, choose SSO, then click Open a New Browser to generate your SSO Passcode.
+  * On the **Cloud Foundry Sign In and Targets** page, choose SSO, then click Open a New Browser to generate your SSO Passcode.
 
   <p align="center">
     <img src="images/btp-subaccount-open-BAS-dev-UI-command-cf-signIn-target.png" alt="" width="900"/>
