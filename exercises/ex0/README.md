@@ -412,7 +412,7 @@ npm update
 ```
 Wait for the command to complete. This process fetches and installs the latest compatible versions of your project's Node.js dependencies.
 
-### 5.3.2. Build MTA Project**
+### 5.3.2. Build MTA Project
 You can build the MTA project using either the graphical UI or the command line.
 
 **Option 1: Using the UI**
