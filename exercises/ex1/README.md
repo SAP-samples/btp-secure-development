@@ -1,4 +1,4 @@
-    # Exercise 1 - Broken Access Control
+# Exercise 1 - Broken Access Control
 Vulnerability: [A01:2025 – Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 
 ## 📖 Overview
