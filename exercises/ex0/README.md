@@ -696,4 +696,4 @@ Now you are ready to start the exercises.
 ## Summary
 
 Congratulations! You've successfully completed the environment setup and initial deployment for the Secure Incident Management application on SAP BTP.
-continue to - [Exercise 1 - Broken Access Control](../ex1/README.md)
+Continue to - [Exercise 1 - Broken Access Control](../ex1/README.md)
