@@ -432,7 +432,7 @@ This section outlines the steps to confirm that the remediation for the Horizont
 - ✅ Result:
   - ❌ The system blocks the edit attempt.
   - ❌ The UI shows a 403 Forbidden error (or "Access denied" message).
-  - ✅ This confirms that the where: 'assignedTo = $user' condition is effectively enforced — Alice cannot access Bob’s incident, even though both are support users. 👉 This resolves the Horizontal Privilege Escalation vulnerability.
+  - ✅ This confirms that the **where: 'assignedTo = $user'** condition is effectively enforced — Alice cannot access Bob’s incident, even though both are support users. 👉 This resolves the Horizontal Privilege Escalation vulnerability.
  
 ### 🪜 Step 4: Verify Alice Cannot Modify or Delete a Closed Incident that is on Alice's Name
 - Action:
