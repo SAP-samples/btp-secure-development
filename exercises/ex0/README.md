@@ -637,6 +637,9 @@ Build a dedicated launchpad site for your Incident Management application.
 
 The Incident Management application launchpad should now open.
 
+⚠️ **Note:** 
+Be sure to save and bookmark the URL for the Launchpad. You will need it to test the Incident Management application during the exercises.
+
 ### 6.6. Verify Access with Different Users
 
 > ⚠️ Before opening the incident-management-application, ensure all backend services are running.
