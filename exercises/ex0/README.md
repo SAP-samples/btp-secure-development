@@ -138,6 +138,8 @@ Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscr
     <br>
     <b></b>
   </p>
+  ⚠️ **Note:** 
+  Be sure to save and bookmark the URL for Cloud Identity administration Console. You will need to access this dashboard later in the exercises to configure user access.
 
 ### 2.3. Establish Trust with SAP Cloud Identity (Trial)
 Establishing trust allows SAP Cloud Identity Services to act as your central identity provider, enabling secure Single Sign-On (SSO) and centralized management of business users. This connection is a technical requirement for services like SAP Build Work Zone to authenticate users and correctly assign the role collections needed to access applications.
@@ -320,6 +322,9 @@ If you navigated away or closed the tab, you can return to this page :
   <img src="images/sap-hana-database-instance.png" alt="SAP HANA Database Instance" width="900"/>
   <br><small>SAP HANA Database instance successfully created</small>
 </p>
+
+⚠️ **Note:** 
+Be sure to save and bookmark the URL for the SAP HANA Cloud Central console. You will need it to start and stop your SAP HANA database instance.
 
 ## Step 5. Launch SAP BAS, Import Project, and Deploy to Cloud Foundry
 ### Oveview
