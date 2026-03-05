@@ -83,7 +83,7 @@ Bestrun, a leading electronics company, uses this application to manage customer
   </p>
 
 ⚠️ **Note:** 
-Be sure to save and bookmark the URL for your SAP BTP subaccpount. You will need to access this later in the exercises to subscribe to services and manage user authorizations.
+Be sure to save and bookmark the URL for your SAP BTP subaccount. You will need to access this later in the exercises to subscribe to services and manage user authorizations.
 
 
 ## Step 2. Set Up Subscriptions
