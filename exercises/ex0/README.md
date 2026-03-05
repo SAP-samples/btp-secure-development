@@ -2,7 +2,6 @@
 
 ## 🚀 Quick Start
 
-* **Duration:** 2 hours hands-on workshop
 * **What you'll build:** A simple SAP BTP application with security features
 * **Prerequisites:** Web browser, SAP BTP Trial Account
 * **Setup time:** ~60 minutes
