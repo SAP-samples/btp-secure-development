@@ -216,7 +216,6 @@ To authorize the users you just created in IAS, you must register them within yo
 
 Repeat this process for each of the following users:
   * bob.smith@bestrun.com (Support user)
-  * alice.jones@bestrun.com (Support user)
   * david.miller@bestrun.com (Admin user)
 
 To add your IAS admin user (Trial user email):
