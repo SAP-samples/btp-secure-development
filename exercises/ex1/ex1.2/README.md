@@ -11,7 +11,7 @@ Vulnerability: [A01:2025 – Broken Access Control](https://owasp.org/Top10/2025
 
 ## 📖 1. Overview
 
-After addressing in [Exercise 1.1 - Horizontal Privilege Escalation](../ex1.1/README.md), the next step is to tackle Vertical Privilege Escalation, which occurs when a user gains access to higher-privileged functions they shouldn't have. 
+After addressing Horizontal Privilege Escalation in [Exercise 1.1](../ex1.1/README.md), the next step is to tackle Vertical Privilege Escalation, which occurs when a user gains access to higher-privileged functions they shouldn't have. 
 In our Incident Management system, this means a support user could perform actions that are reserved for administrators, such as closing high-urgency incidents, or modifying or deleting closed incidents. 
 This violates critical business rules and poses significant risks to the integrity and compliance of the system.
 
