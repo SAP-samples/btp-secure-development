@@ -441,7 +441,7 @@ This section evaluates the implementation of audit logging and data protection i
 ```
   - ✅ Audit log generates **PersonalDataModified** entries for changes to annotated fields with @PersonalData.
   - ✅ Audit log masks only fields explicitly annotated as sensitive.
-  - ✅ This behavior is regulated by the `@cap-js/audit-logging` plugin. For details on configuring the audit log plugin, see the [documentation](https://cap.cloud.sap/docs/guides/data-privacy/audit-logging).
+  - ✅ This behavior is regulated by the `@cap-js/audit-logging` plugin. For details on configuring the audit log plugin, see the [documentation](https://cap.cloud.sap/docs/guides/security/dpp-audit-logging).
 
 #### 🪜 Step 5: Test Write Access to Customer Data with Support User
 - ▶️ Action:
