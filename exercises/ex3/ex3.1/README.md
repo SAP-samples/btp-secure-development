@@ -266,7 +266,7 @@ annotate my.Addresses with @PersonalData : {
 
 ### 🪜 Step 3: Create server.js with Custom 403 Handler
 
-As part of audit logs, there can be cases where you want to generate custom audit logs. For example, if you want to log 403 - Forbidden events when a user does not have the required authorizations but is still trying to access certain data. This can be achieved by adding custom handlers in a CAP application.
+As part of audit logs, there can be cases where you want to generate custom audit logs. For example, you might want to log 403 - Forbidden events when a user does not have the required authorizations but is still trying to access certain data. This can be achieved by adding custom handlers in a CAP application.
 
 - ▶️ Action:
   - Create a new file 'server.js' in your project on root-level, underneath 'secure-incident-management'
