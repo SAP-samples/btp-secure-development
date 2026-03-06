@@ -274,7 +274,7 @@ This file contains multiple HTTP requests grouped into three logical test catego
 
   - **Test 3: A SQL Injection using multiple SQL statements :**
     Demonstrates how the safe method neutralizes a destructive multi-statement payload ("1004100'; DELETE FROM ...;--") through proper parameterization.
-    For data protection, this payload is executed exclusively with the safe method; the vulnerable methods (concat,tagged) are intentionally excluded from this test.
+    For data protection, this payload is executed exclusively with the safe method; the vulnerable methods (concat, tagged) are intentionally excluded from this test.
 
 ### 🪜 Step 2: Exploit the SQL Injection Vulnerability
 - ▶️ Action:
