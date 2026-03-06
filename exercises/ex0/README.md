@@ -305,7 +305,7 @@ Before creating the instance, you need to know where it will be mapped.
 
 - After the instance creation wizard closes, you should remain on the SAP HANA Cloud Central dashboard.
 - To monitor progress, click the Auto-Refresh button 🔄 in the top-right corner.
-- Wait until the status indicator turns 🟢 Running.
+- You can continue with the next step and configure SAP BAS, while the database is still being created. However, the database needs to be in the status 🟢 Running when you deploy your changes to Cloud Foundry in step 5.3.3. 
 
 ⚠️ **Note:** 
 If you navigated away or closed the tab, you can return to this page : 
