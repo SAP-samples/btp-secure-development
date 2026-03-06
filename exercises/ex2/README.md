@@ -469,7 +469,7 @@ Authorization: Basic {{username}}:{{password}}
 ```
 - ✅ Result:
   - All malicious payloads fail to return unintended data or alter query behavior.
-  - The application either returns no results, confirming comprehensive protection.
+  - The application returns no results, confirming comprehensive protection.
 
 ### 📌 Verification Summary
 The remediation successfully addresses the SQL Injection vulnerability by:
