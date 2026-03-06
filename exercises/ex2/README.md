@@ -431,7 +431,6 @@ Authorization: Basic {{username}}:{{password}}
   "customerID": "1004100' OR '1'='1",
   "method": "safe"
 }
-[
 ```
 - Result:
 ```
