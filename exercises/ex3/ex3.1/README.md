@@ -142,7 +142,7 @@ In this workshop, a **Security Logging and Monitoring Failures** vulnerability i
 
 ### 🪜 Step 1: Start Local Development Server
 
-- ▶️ Action : Run the following command in your terminal (within SAP Business Application Studio or your local environment), (skip if already running):
+- ▶️ Action : Run the following command in your terminal within SAP Business Application Studio (skip if already running):
   
 ```
  cds watch 
