@@ -673,7 +673,6 @@ Be sure to save and bookmark the URL for the Launchpad. You will need it to test
 |------|------|----------|
 | `alice.jones@bestrun.com` | Support | `your initial password` |
 | `bob.smith@bestrun.com` | Support | `your initial password` |
-| `david.miller@bestrun.com` | Admin | `your initial password` |
 
 <p align="center">
   <img src="images/btp-subaccount-open-SAP-Build-Work-Zone-sign-out.png" alt="" width="900"/>
