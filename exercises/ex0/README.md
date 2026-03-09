@@ -218,9 +218,9 @@ Repeat this process for each of the following users:
   * bob.smith@bestrun.com (Support user)
   * david.miller@bestrun.com (Admin user)
 
-To add your IAS admin user (Trial user email):
+8. add your IAS admin user (Trial user email):
   * Repeat the steps above
-  * Use the email address of your IAS admin account (e.g., admin@yourcompany.com)
+  * Use the email address of your IAS admin account (e.g., admin@bestrun.com)
   * Ensure the Identity Provider matches your custom IAS tenant.
   
 ### 3.4. Configure Role Collections
@@ -228,13 +228,10 @@ To ensure you have full administrative rights to manage the development tools, a
 
 1. In the **SAP BTP Cockpit**, go to your **trial subaccount**.
 2. On the left-side menu, navigate to **Security → Users**.
-3. ⚠️Important: Confirm that your custom IAS tenant admin user (e.g., admin@bestrun.com) exists in this subaccount and is assigned to your custom IAS tenant as the Identity Provider.
-If the user is not listed, create it and select your custom IAS tenant (not “Default identity provider”) as the Identity Provider.
-When creating the user, enter the same email address in both the User Name and E-mail fields (e.g., admin@bestrun.com); these values must match exactly.
-4. Click your IAS admin-user email to open the details page.
-5. Verify that the **Identity Provider** field shows your custom IAS tenant.
-6. Click **Assign Role Collection**.
-7. Search for and select these roles:
+3. Click your IAS admin-user email to open the details page.
+4. Verify that the **Identity Provider** field shows your custom IAS tenant.
+5. Click **Assign Role Collection**.
+6. Search for and select these roles:
    - **`Business_Application_Studio_Administrator`**
    - **`Business_Application_Studio_Developer`**
    - **`Business_Application_Studio_Extension_Deployer`**
