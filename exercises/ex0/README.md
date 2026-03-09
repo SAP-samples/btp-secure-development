@@ -228,17 +228,20 @@ To ensure you have full administrative rights to manage the development tools, a
 
 1. In the **SAP BTP Cockpit**, go to your **trial subaccount**.
 2. On the left-side menu, navigate to **Security → Users**.
-3. Click your IAS admin-user email to open the details page.
-4. Verify that the **Identity Provider** field shows your IAS tenant.
-5. Click **Assign Role Collection**.
-6. Search for and select these roles:
+3. ⚠️Important: Confirm that your custom IAS tenant admin user (e.g., admin@bestrun.com) exists in this subaccount and is assigned to your custom IAS tenant as the Identity Provider.
+If the user is not listed, create it and select your custom IAS tenant (not “Default identity provider”) as the Identity Provider.
+When creating the user, enter the same email address in both the User Name and E-mail fields (e.g., admin@bestrun.com); these values must match exactly.
+4. Click your IAS admin-user email to open the details page.
+5. Verify that the **Identity Provider** field shows your custom IAS tenant.
+6. Click **Assign Role Collection**.
+7. Search for and select these roles:
    - **`Business_Application_Studio_Administrator`**
    - **`Business_Application_Studio_Developer`**
    - **`Business_Application_Studio_Extension_Deployer`**
    - **`Launchpad_Admin`**
    - **`SAP HANA Cloud Administrator`**
    - **`Subaccount Viewer`**
-7. Click **Assign**.
+8. Click **Assign**.
 
 ## Step 4. Create SAP HANA Cloud Instance
 In this step, you will provision a new SAP HANA Cloud database instance and map it to your Cloud Foundry environment. This allows your applications and development tools (like SAP Business Application Studio) to interact with the database.
