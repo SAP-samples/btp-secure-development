@@ -218,9 +218,9 @@ Repeat this process for each of the following users:
   * bob.smith@bestrun.com (Support user)
   * david.miller@bestrun.com (Admin user)
 
-8. add your IAS admin user (Trial user email):
+8. Add your IAS admin user (Trial user email):
   * Repeat the steps above
-  * Use the email address of your IAS admin account (e.g., admin@bestrun.com)
+  * Use the email address of your IAS admin account (e.g., admin@yourcompany.com)
   * Ensure the Identity Provider matches your custom IAS tenant.
   
 ### 3.4. Configure Role Collections
