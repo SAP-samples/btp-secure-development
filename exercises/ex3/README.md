@@ -18,10 +18,10 @@ Security Logging and Monitoring Failures is a critical web application security 
   
   CAP provides a comprehensive audit logging framework:
 
-- **[Personal Data Protection](https://cap.cloud.sap/docs/guides/data-privacy/annotations#personaldata):** Automatic audit logging for GDPR compliance using `@PersonalData` annotations
-- **[Automated Audit Events](https://cap.cloud.sap/docs/guides/data-privacy/audit-logging#custom-audit-logging):** Built-in logging for critical operations (`SensitiveDataRead`, `PersonalDataModified`, `SecurityEvent`)
-- **[Enterprise Integration](https://cap.cloud.sap/docs/guides/data-privacy/audit-logging#accessing-audit-logs):** SAP Audit Log Viewer service with tamper-proof storage and regulatory compliance
-- **[Custom Security Logging](https://cap.cloud.sap/docs/guides/data-privacy/audit-logging#setup):** Programmatic audit event generation via `@cap-js/audit-logging`
+- **[Personal Data Protection](https://cap.cloud.sap/docs/guides/security/dpp-annotations):** Automatic audit logging for GDPR compliance using `@PersonalData` annotations
+- **[Automated Audit Events](https://cap.cloud.sap/docs/guides/security/dpp-audit-logging#custom-audit-logging):** Built-in logging for critical operations (`SensitiveDataRead`, `PersonalDataModified`, `SecurityEvent`)
+- **[Enterprise Integration](https://cap.cloud.sap/docs/guides/security/dpp-audit-logging#accessing-audit-logs):** SAP Audit Log Viewer service with tamper-proof storage and regulatory compliance
+- **[Custom Security Logging](https://cap.cloud.sap/docs/guides/security/dpp-audit-logging#audit-logging):** Programmatic audit event generation via `@cap-js/audit-logging`
 
 
 Continue to [Exercise 3.1 - Audit Logging for Sensitive Data Access in Local Development](./ex3.1/README.md)
