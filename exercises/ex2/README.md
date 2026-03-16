@@ -354,8 +354,8 @@ Authorization: Basic {{username}}:{{password}}
 
 ## 🛡️ 4. Remediation
 Now that you've identified the SQL Injection vulnerability, let's fix it by implementing secure database queries using CAP's built-in protections.
-- Copy the contents of [services.js](./srv/services.js) into your project’s srv/services.js file.
-- Ensure the following corrected code is included in the file:
+
+- Ensure the following corrected code is included into your project’s srv/services.js file:
 
 ```
  * SECURE: Parameterized query method
