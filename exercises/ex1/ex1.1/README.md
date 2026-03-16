@@ -413,7 +413,7 @@ This section outlines the steps to confirm that the remediation for the Horizont
   mbt build
   cf deploy mta_archives/incident-management_1.0.0.mtar
   ```
-⚠️ After deployment, ensure SAP Build Work Zone has the latest content from your HTML5 application. Follow the instructions in [Update Content](/exercises/ex0#61-update-content).
+⚠️ After deployment, ensure SAP Build Work Zone has the latest content from your HTML5 application. Follow the instructions in [Update Content](.../ex0#61-update-content).
 
 ### 🪜 Step 2: Login as Alice (Support User)
 - ▶️ Action:
