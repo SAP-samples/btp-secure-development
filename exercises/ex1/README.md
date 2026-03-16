@@ -27,8 +27,6 @@ CAP provides a multi-layered security approach:
     - **Instance-based [(`@restrict` annotations)](https://cap.cloud.sap/docs/guides/security/authorization#restrict-annotation):** Limits which specific records or instances a user can interact with (e.g., a user can only see data they created).
     - **Programmatic checks  [(in service handlers)](https://cap.cloud.sap/docs/guides/providing-services#custom-logic):** Used when annotations are insufficient for complex business rules.
  
-There are two exercises related to this topic. Please ensure your environment is prepared before starting.
-
 ## 📋 Prerequisites
 
 There are two exercises related to this topic. Please ensure your environment is prepared before starting:
