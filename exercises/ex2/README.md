@@ -97,7 +97,7 @@ annotate AdminService with @(requires: 'admin');
 
 - Copy the contents of [services_vulnerable.js](./srv/services_vulnerable.js) into your project’s **srv/services.js** file.
 - The updated **services.js** file now includes a new function handler for **fetchCustomer** in the AdminService class.
-- Ensure the following corrected code is included in the file:
+- Ensure the following corrected code is included in **srv/services.js** file :
 
 ```
 const cds = require('@sap/cds');
@@ -192,27 +192,7 @@ init() {
         }
       }
 
-      /**
-       * ✅ SECURE: Parameterized query method
-       * This method uses CAP's fluent API to create a parameterized query
-       * which automatically sanitizes user input and prevents SQL injection.
-       */
-      if (method === 'safe') {
-        console.log('✅ Using SECURE parameterized query method.');
-
-        try {
-          // ✅ SECURE: Parameterized query using CAP's fluent API
-          // This approach automatically sanitizes input and prevents SQL injection
-          // Use the CDS entity name, not the DB table name/full path
-          const query = SELECT.from('Customers').where({ ID: customerID });
-          const results = await cds.run(query);
-          return results;
-        } catch (error) {
-          // Log the error and reject the request
-          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
-          return req.error(400, 'Invalid customer identifier');
-        }
-      }
+... other method
 
       // Handle unknown methods
       // If an unknown method is provided, return an error
