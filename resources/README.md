@@ -10,6 +10,7 @@
 -   [BTP Developer Guide - SAP Help](https://help.sap.com/docs/btp/btp-developers-guide/btp-developers-guide)
 
 ## Topic Pages at SAP Community
+- [BTP Security](https://pages.community.sap.com/topics/btp-security)
 - [SAP Cloud Application Programming Model](https://pages.community.sap.com/topics/cloud-application-programming)
 - [SAP Fiori tools](https://pages.community.sap.com/topics/fiori-tools)
 - [SAP Build Code](https://pages.community.sap.com/topics/build-code) 
