@@ -381,10 +381,12 @@ This section outlines the steps to confirm that the remediation for the SQL Inje
 - The application now correctly uses parameterized queries, preventing any manipulation of the query structure.
 
 ### 🪜 Step 1: Test C1: Legitimate Request (safe) → expect 1 row
+
 - ▶️ Action:
- 💡**Note:** Ensure the deployment includes the updated [services.js](./srv/services.js) file with the secure parameterized query implementation.
+
+-  💡**Note:** Ensure the deployment includes the updated [services.js](./srv/services.js) file with the secure parameterized query implementation.
 - Open the sql-injection-demo.http file.
-- Execute the **✅ Test C1:** by clicking on "Send Request" below line 71:
+- Execute the **✅ Test C1:** by clicking on "Send Request" below line 70:
 
 ```
 GET {{server}}/odata/v4/admin/fetchCustomer
@@ -403,7 +405,7 @@ Authorization: Basic {{username}}:{{password}}
 
 ### 🪜 Step 2: Test C2: Injection attempt (safe) → expect 0 rows (treated as literal parameter)
 - ▶️ Action:
-  - Execute the **✅ Test C2:** by clicking on "Send Request" below line 81:
+  - Execute the **✅ Test C2:** by clicking on "Send Request" below line 80:
 ```
 GET {{server}}/odata/v4/admin/fetchCustomer
 Content-Type: application/json
@@ -435,7 +437,7 @@ Authorization: Basic {{username}}:{{password}}
 - ✅ This confirms that the SQL Injection vulnerability has been successfully mitigated.
 
 ### 🪜 Step 3: Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
-- ▶️ Action: Execute the **Test C3** by clicking on "Send Request" above line 42:
+- ▶️ Action: Execute the **Test C3** by clicking on "Send Request" above line 90:
 
 ```
   ### 🛡️ Test C3: Multi-statement attempt (safe) → expect 0 rows (treated as literal parameter)
