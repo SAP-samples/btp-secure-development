@@ -31,7 +31,7 @@ CAP provides a multi-layered security approach:
 
 There are two exercises related to this topic. Please ensure your environment is prepared before starting:
 
-- Completed [Environment Setup and Initial Deployment](./ex0#environment-setup-and-initial-deployment).
+- Completed [Environment Setup and Initial Deployment](../ex0#environment-setup-and-initial-deployment).
 - Ensure the following systems are active:
     * **SAP HANA Cloud:** Navigate to your SAP HANA Cloud instance in the BTP Cockpit and ensure the status is "Running".
     * **SAP Business Application Studio (BAS):** Launch BAS and verify that your development space is in a "Running" state.
