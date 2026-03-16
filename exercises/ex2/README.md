@@ -94,8 +94,9 @@ annotate AdminService with @(requires: 'admin');
 ```
 
 **Updated File:** srv/services.js
-- The updated **services.js** file now includes a new function handler for **fetchCustomer** in the AdminService class.
+
 - Copy the contents of [services_vulnerable.js](./srv/services_vulnerable.js) into your project’s **srv/services.js** file.
+- The updated **services.js** file now includes a new function handler for **fetchCustomer** in the AdminService class.
 - Ensure the following corrected code is included in the file:
 
 ```
