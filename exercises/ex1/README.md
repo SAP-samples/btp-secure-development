@@ -26,8 +26,19 @@ CAP provides a multi-layered security approach:
     - **Role-based [(`@requires` annotations)](https://cap.cloud.sap/docs/guides/security/authorization#requires):** Controls access to functions or resources based on predefined organizational roles assigned to the user.
     - **Instance-based [(`@restrict` annotations)](https://cap.cloud.sap/docs/guides/security/authorization#restrict-annotation):** Limits which specific records or instances a user can interact with (e.g., a user can only see data they created).
     - **Programmatic checks  [(in service handlers)](https://cap.cloud.sap/docs/guides/providing-services#custom-logic):** Used when annotations are insufficient for complex business rules.
+ 
+There are two exercises related to this topic. Please ensure your environment is prepared before starting.
 
-There are two exercises related to this topic.
+## 📋 Prerequisites
+
+Before proceeding with these exercises, ensure your environment is prepared:
+- Completed [Environment Setup and Initial Deployment](./exercises/ex0#environment-setup-and-initial-deployment).
+- Ensure the following systems are active:
+    * **SAP HANA Cloud:** Navigate to your SAP HANA Cloud instance in the BTP Cockpit and ensure the status is "Running".
+    * **SAP Business Application Studio (BAS):** Launch BAS and verify that your development space is in a "Running" state.
+    * **Cloud Foundry Space:** Ensure that the application incident-managment-srv is started and running in your space.
+
+Once your systems are verified, proceed with the following exercises:
 
 Continue to [Exercise 1.1 - Horizontal Privilege Escalation](./ex1.1/README.md)
 
