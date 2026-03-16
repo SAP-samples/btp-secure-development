@@ -37,7 +37,7 @@ There are two exercises related to this topic. Please ensure your environment is
 - Ensure the following systems are active:
     * **SAP HANA Cloud:** Navigate to your SAP HANA Cloud instance in the BTP Cockpit and ensure the status is "Running".
     * **SAP Business Application Studio (BAS):** Launch BAS and verify that your development space is in a "Running" state.
-    * **Cloud Foundry Space:** Ensure that the application incident-managment-srv is started and running in your space.
+    * **Cloud Foundry Space:** Ensure that the application incident-management-srv is started and running in your space.
 
 Once your systems are verified, proceed with the following exercises:
 
