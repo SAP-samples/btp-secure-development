@@ -33,7 +33,7 @@ There are two exercises related to this topic. Please ensure your environment is
 
 - Completed [Environment Setup and Initial Deployment](../ex0#environment-setup-and-initial-deployment).
 - Ensure the following systems are active:
-    * **SAP HANA Cloud:** SAP HANA Database is **Running**, see section [Getting Started - 6.6.1. Check and Start SAP HANA Database](../ex0#661-check-and-start-sap-hana-database)
+    * **SAP HANA Cloud:** SAP HANA Database is **Running**, see section [Getting Started - 6.6.1. Check and Start SAP HANA Database](../ex0/README.md#661-check-and-start-sap-hana-database)
     * **SAP Business Application Studio (BAS):** Launch BAS and verify that your development space is in a "Running" state.
     * **Cloud Foundry Space:** The application incident-management-srv is started and running in your space. see section [Check and Start the incident-management-srv Application](../ex0#662-check-and-start-the-incident-management-srv-application
 
