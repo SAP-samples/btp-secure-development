@@ -413,11 +413,11 @@ This section outlines the steps to confirm that the remediation for the Horizont
   mbt build
   cf deploy mta_archives/incident-management_1.0.0.mtar
   ```
-⚠️ After deployment, ensure SAP Build Work Zone has the latest content from your HTML5 application. Follow the instructions in [Update Content](../../ex0/README.md#61-update-content).
+⚠️ After deployment, if you run into issues when trying to open the application from the SAP Build Work Zone Launchpad, first of all ensure that you logged your test user out and then back in. If this does not help, ensure that the Work Zone content is up to date. Follow the instructions in [Update Content](../../ex0/README.md#61-update-content).
 
 ### 🪜 Step 2: Login as Alice (Support User)
 - ▶️ Action:
-  - Access SAP Build Work Zone and log in with alice.jones@bestrun.com. (Note: Make sure to refresh the application first.)
+  - Access SAP Build Work Zone and log in with alice.jones@bestrun.com.
   - In the incident list, locate an incident assigned to Alice (e.g., "Strange noise when switching off Inverter").
   - Confirm the 'Assigned To' column displays alice.jones@bestrun.com.
   - Click on the incident to open its details.
