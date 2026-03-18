@@ -83,7 +83,7 @@ annotate AdminService with @(requires: 'admin');
 
 ### 🪜 Step 1: Login as Alice (Support User) 
 
-- Access SAP Build Work Zone.
+- Access the launchpad of SAP Build Work Zone.
 - Login with alice.jones@bestrun.com.
 - Navigate to the Incident Management application.
 
