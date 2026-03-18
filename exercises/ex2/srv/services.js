@@ -90,27 +90,27 @@ class AdminService extends cds.ApplicationService {
        * This method directly interpolates user input into the SQL query,
        * creating a significant SQL injection vulnerability.
        */
-if (method === 'concat') {
-  console.log('⚠️ Using INSECURE string concatenation method.');
-  // ❌ CRITICAL: User input is directly embedded in SQL query
-  // This allows for SQL injection attacks
-  const vulnerableQuery =
-    `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
-
-  console.log('❌ Vulnerable query constructed:', vulnerableQuery);
-
-  try {
-    // Execute the vulnerable query
-    const results = await cds.run(vulnerableQuery);
-    console.log('✅ Results count:', results.length);
-    return results;
-  } catch (error) {
-    console.error('❌ Error:', error.message);
-    // Log the error and reject the request
-    cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
-    return req.error(400, 'Invalid customer identifier');
-  }
-}
+      if (method === 'concat') {
+        console.log('⚠️ Using INSECURE string concatenation method.');
+        // ❌ CRITICAL: User input is directly embedded in SQL query
+        // This allows for SQL injection attacks
+        const vulnerableQuery =
+          `SELECT * FROM sap_capire_incidents_Customers WHERE ID = '${customerID}'`;
+      
+        console.log('❌ Vulnerable query constructed:', vulnerableQuery);
+      
+        try {
+          // Execute the vulnerable query
+          const results = await cds.run(vulnerableQuery);
+          console.log('✅ Results count:', results.length);
+          return results;
+        } catch (error) {
+          console.error('❌ Error:', error.message);
+          // Log the error and reject the request
+          cds.log('security').error(`SQL error: ${error.message.substring(0, 100)}`);
+          return req.error(400, 'Invalid customer identifier');
+        }
+      }
 
       /**
        ❌ VULNERABILITY 2: Parenthesized tagged template method
