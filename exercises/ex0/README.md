@@ -359,7 +359,7 @@ By the end of this step, the Secure Incident Management application will be succ
   </p>
     
 3. Click **Create Dev Space**.
-4. Enter the **Dev Space name: secure_incident_management**.
+4. Enter the **Dev Space name: secure_incident_management**
 5. Select **Full Stack Cloud Application** as the application type.
 6. Click **Create Dev Space**.
 
