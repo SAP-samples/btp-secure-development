@@ -215,7 +215,7 @@ We will exploit the SQL Injection vulnerability in a local development environme
 
 ### 🪜 Step 1: Review the Test File for the HTTP Endpoint
 - ▶️ Action:
-  - Navigate to the `test/http` directory in your CAP project folder.
+  - Navigate to the `test/http` directory in your project folder.
   - Open the file "sql-injection-demo.http".
   
 ```
