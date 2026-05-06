@@ -186,10 +186,10 @@ The BTP Trial landscape only supports default SAP-managed identity providers. Us
   1. Download user data file [IAS-business-users.csv](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/IAS-business-users.csv)
   2. Open your web browser and navigate to your IAS tenant's administration console. The URL typically looks like https://<your_tenant_id>.trial-accounts.ondemand.com/admin/
   3. Enter your administrator credentials and log in.
-  2. From the main Dashboard, click on the **Import Users** tile.
-  3. Click the **Browse** button to select your IAS-business-users.csv file.
-  4. Click the **Import** button at the top right.
-  5. Click **Import** button on the message box **Confirm**.
+  4. From the main Dashboard, click on the **Import Users** tile. ⚠️ Do not use the import functionality in the separate "User Management" app. This requires a different file format. ⚠️
+  5. Click the **Browse** button to select your IAS-business-users.csv file.
+  6. Click the **Import** button at the top right.
+  7. Click **Import** button on the message box **Confirm**.
 
 ### 3.2. Set initial Password for Business users
   1. In the **User Management** screen, search for and click on a user (e.g., alice.jones@bestrun.com).
