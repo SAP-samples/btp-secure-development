@@ -161,6 +161,7 @@ That is why in the previous step, you configured a dedicated custom IAS tenant a
   4. In the Create Subscription wizard:
       * Confirm Service is set to "SAP Build Work Zone, standard edition"
       * Select **Subscription Plan: standard**
+        
            ⚠️ Make sure that you select the **Subscription** plan, not the Instance plan with the same name ⚠️
       * Click on **Create**
   5. Once the subscription process has finished, confirm that the **Status** is **"Subscribed"**
