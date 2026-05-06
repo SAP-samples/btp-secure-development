@@ -306,7 +306,7 @@ Before creating the instance, you need to know where it will be mapped.
 #### 4.2.8. Verify Instance Creation
 
 - After the instance creation wizard closes, you should remain on the SAP HANA Cloud Central dashboard.
-- To monitor progress, click the Auto-Refresh button 🔄 ![Refresh icon](https://github.com/SAP-samples/btp-secure-development/blob/main/exercises/ex0/images/hana-cockpit-auto-refresh.png) in the top-right corner.
+- To monitor progress, click the Auto-Refresh button ![Refresh icon](https://github.com/SAP-samples/btp-secure-development/blob/main/exercises/ex0/images/hana-cockpit-auto-refresh.png) in the top-right corner.
 - You can continue with the next step and configure SAP BAS, while the database is still being created. However, the database needs to be in the status 🟢 Running when you deploy your changes to Cloud Foundry in step 5.3.3. 
 
 ⚠️ **Note:** 
