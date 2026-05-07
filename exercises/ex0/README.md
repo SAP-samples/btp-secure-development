@@ -222,7 +222,7 @@ Repeat this process for each of the following users:
 
 8. Add your IAS admin user (Trial user email):
   * Repeat the steps above
-  * Use the email address of your IAS admin account (e.g., admin@yourcompany.com) ⚠️ There will already be a users with the same email address. However, this user is from the Default Identity Provider, so it a different entity ⚠️
+  * Use the email address of your IAS admin account (e.g., admin@yourcompany.com) ⚠️ There will already be a user with the same email address. However, this user is from the Default Identity Provider, so it a different entity ⚠️
   * Ensure the Identity Provider matches your custom IAS tenant.
   
 ### 3.4. Configure Role Collections
