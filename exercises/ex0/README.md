@@ -379,19 +379,29 @@ By the end of this step, the Secure Incident Management application will be succ
 </p>
 
 ### 5.2. Download and Import the Project
-1. Download the project file secure-incident-management.zip from the following link:
-  👉 [Download Secure Incident Management Project](https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/secure_incident_management.zip)
-2. Save the file locally on your machine. This archive will be imported into SAP Business Application Studio in the next step.
-3. In the BAS Explorer pane, click **Import** Project.
-4. Select the secure-incident-management.zip file from your local machine and import it.
+
+1. Open the Integrated Terminal: Open the terminal by navigating to **Hamburger menu → Terminal → New Terminal**
 <p align="center">
-  <img src="images/BAS-import-project.png" alt="" width="900"/>
+  <img src="images/BAS-open-terminal.png" alt="" width="900"/>
   <br>
   <b></b>
 </p>
 
-5. Wait for the status bar at the bottom of SAP BAS to confirm completion before proceeding to the next steps.
-6. The import is complete only when the project folder appears in the Project Explorer and its structure (such as mta.yaml) is fully loaded.
+2. Ensure that you are in the directory `/home/user/projects/`.
+3. Execute the following command: **curl -L https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/secure_incident_management.zip -o project.zip && unzip project.zip && rm project.zip**
+4. Click **Open Folder** to start the import of the workspace.
+<p align="center">
+  <img src="images/BAS-open-terminal.png" alt="" width="900"/>
+  <br>
+  <b></b>
+</p>
+5. Select the `secure_incident_management`directory and click **OK**.
+<p align="center">
+  <img src="images/BAS-choose-project.png" alt="" width="900"/>
+  <br>
+  <b></b>
+</p>
+6. Wait for the status bar at the bottom of SAP BAS to confirm completion before proceeding to the next steps.
 7. Bookmark your **SAP Business Application Studio** link.
    
 ### 5.3. Build and Deploy the Application to Cloud Foundry
