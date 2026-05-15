@@ -434,7 +434,7 @@ You can build the MTA project using either the graphical UI or the command line.
 </p>
 
 **Option 2: Using the Command Line**
-  * Ensure your terminal is pointed to the correct directory:**secure-incident-management**
+  * Ensure your terminal is pointed to the correct directory: **secure-incident-management**
   * Run the Cloud MTA Build Tool to generate the deployment archive:
 
 ```
