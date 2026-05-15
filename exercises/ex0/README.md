@@ -391,14 +391,13 @@ By the end of this step, the Secure Incident Management application will be succ
   <b></b>
 </p>
 
-4. Ensure that you are in the directory `/home/user/projects/`.
+4. Ensure that you are in the directory **`/home/user/projects/`**.
 5. Copy and execute the following command in your terminal to download, extract, and automatically navigate into the Secure Incident Management application folder:
   
    ```
    curl -L https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/secure_incident_management.zip -o project.zip && unzip project.zip && rm project.zip && cd secure_incident_management
    ```
-6. Wait for the status bar at the bottom of SAP BAS to confirm completion before proceeding to the next steps.
-7. Bookmark your **SAP Business Application Studio** link.
+6. Bookmark your **SAP Business Application Studio** link.
    
 ### 5.3. Build and Deploy the Application to Cloud Foundry
 Before you build and deploy the application, it's crucial to ensure all project dependencies are up-to-date.
