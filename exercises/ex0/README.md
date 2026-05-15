@@ -304,17 +304,18 @@ Before creating the instance, you need to know where it will be mapped.
 - Click **Create Instance**.
 
 #### 4.2.8. Verify Instance Creation
+Once the instance creation wizard closes, you will return to the **SAP HANA Cloud Central** dashboard to monitor its progress :
+- Click the Auto-Refresh button in the top-right corner of the dashboard to update the status.
+- You will see your new instance (e.g., hanadb) listed in the All Instances view.
+- The status indicator will initially show 🟢 Starting and will eventually turn to 🟢 Running.
 
-- After the instance creation wizard closes, you should remain on the SAP HANA Cloud Central dashboard.
-- To monitor progress, click the Auto-Refresh button ![Refresh icon](https://github.com/SAP-samples/btp-secure-development/blob/main/exercises/ex0/images/hana-cockpit-auto-refresh.png) in the top-right corner.
-- You can continue with the next step and configure SAP BAS, while the database is still being created. However, the database needs to be in the status 🟢 Running when you deploy your changes to Cloud Foundry in step 5.3.3. 
-
-⚠️ **Note:** 
-If you navigated away or closed the tab, you can return to this page : 
-- In the left navigation menu, go to **Instances and Subscriptions** → **Applications**.
-- Click on **`SAP HANA Cloud`** application.
-- If prompted for login, select your **Sign in with alternative identity provider**.
-- You will see your instance (e.g., `hanadb`) listed in the **All Instances** view with a 🟢 **Starting** or **Running** status (green indicator).
+💡 **Tip** 
+  - You can continue with the next step and configure SAP BAS, while the database is still being created. However, the database needs to be in the status 🟢 Running when you deploy your changes to Cloud Foundry in step 5.3.3.
+  - If you navigated away or closed the tab, you can return to this page : 
+    - In the left navigation menu, go to **Instances and Subscriptions** → **Applications**.
+    - Click on **`SAP HANA Cloud`** application.
+    - If prompted for login, select your **Sign in with alternative identity provider**.
+    - You will see your instance (e.g., `hanadb`) listed in the **All Instances** view with a 🟢 **Starting** or **Running** status (green indicator).
 
 <p align="center">
   <img src="images/sap-hana-database-instance.png" alt="SAP HANA Database Instance" width="900"/>
