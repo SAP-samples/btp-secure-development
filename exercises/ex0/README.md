@@ -391,7 +391,7 @@ By the end of this step, the Secure Incident Management application will be succ
   <b></b>
 </p>
 
-4. Ensure that you are in the directory **`/home/user/projects/`**.
+4. Ensure that you are in the directory **`user: projects`**.
 5. Copy and execute the following command in your terminal to download, extract, and automatically navigate into the Secure Incident Management application folder:
   
    ```
