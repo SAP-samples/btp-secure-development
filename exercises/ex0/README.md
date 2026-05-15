@@ -395,7 +395,7 @@ By the end of this step, the Secure Incident Management application will be succ
 5. Copy and execute the following command in your terminal to download, extract, and automatically navigate into the Secure Incident Management application folder:
   
    ```
-   curl -L https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/secure_incident_management.zip -o project.zip && unzip project.zip && rm project.zip && cd secure_incident_management
+   curl -L https://github.com/SAP-samples/btp-secure-development/releases/download/v1.0.1/secure_incident_management.zip -o secure_incident_management.zip && unzip secure_incident_management.zip && cd secure_incident_management
    ```
 6. Bookmark your **SAP Business Application Studio** link.
    
