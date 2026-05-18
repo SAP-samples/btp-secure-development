@@ -83,9 +83,14 @@ annotate AdminService with @(requires: 'admin');
 
 ### 🪜 Step 1: Login as Alice (Support User) 
 
-- Access the launchpad of SAP Build Work Zone.
-- Login with alice.jones@bestrun.com.
-- Navigate to the Incident Management application.
+**Prerequisites:**
+- Ensure the **SAP HANA Database** is **Running**. Refer to section [Getting Started - 6.6.1. Check and Start SAP HANA Database](../../ex0/README.md#661-check-and-start-sap-hana-database)
+- Ensure the **incident-management-srv** Application is started. Refer to section [Getting Started - 6.6.2. Check and Start the incident-management-srv Application](../../ex0/README.md#662-check-and-start-the-incident-management-srv-application)
+
+- ▶️ Action:
+  - Access the launchpad of SAP Build Work Zone.
+  - Login with alice.jones@bestrun.com.
+  - Navigate to the Incident Management application.
 
 ### 🪜 Step 2: Exploit Modifying an Incident
 
