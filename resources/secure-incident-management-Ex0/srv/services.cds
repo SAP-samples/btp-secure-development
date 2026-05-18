@@ -3,6 +3,10 @@ using { sap.capire.incidents as my } from '../db/schema';
 /**
  * Service used by support personell, i.e. the incidents' 'processors'.
  */
+
+// THE LOBBY: Open to any logged-in user so Fiori $metadata loads without freezing
+@requires: 'authenticated-user'
+
 service ProcessorService { 
     entity Incidents as projection on my.Incidents;
 @readonly
