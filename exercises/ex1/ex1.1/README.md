@@ -85,7 +85,7 @@ annotate AdminService with @(requires: 'admin');
 
 **Prerequisites:**
 - Ensure the **SAP HANA Database** is **Running**. Refer to section [Getting Started - 6.6.1. Check and Start SAP HANA Database](../../ex0/README.md#661-check-and-start-sap-hana-database)
-- Ensure the **incident-management-srv** Application is started. Refer to section [Getting Started - 6.6.2. Check and Start the incident-management-srv Application](../../ex0/README.md#662-check-and-start-the-incident-management-srv-application)
+- Ensure the **incident-management-srv** application is started. Refer to section [Getting Started - 6.6.2. Check and Start the incident-management-srv Application](../../ex0/README.md#662-check-and-start-the-incident-management-srv-application)
 
 - ▶️ Action:
   - Access the launchpad of SAP Build Work Zone.
