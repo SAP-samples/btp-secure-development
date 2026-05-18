@@ -24,7 +24,7 @@ class ProcessorService extends cds.ApplicationService {
   async onUpdate (req) {
     const { status_code } = await SELECT.one(req.subject, i => i.status_code).where({ID: req.data.ID})
     if (status_code === 'C')
-      return req.reject(403, 'Cannot modify a closed, incident');
+      return req.error(403, 'Cannot modify a closed, incident');
   }
 }
 module.exports = { ProcessorService }
