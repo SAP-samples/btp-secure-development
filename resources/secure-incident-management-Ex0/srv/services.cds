@@ -1,26 +1,33 @@
 using { sap.capire.incidents as my } from '../db/schema';
 
 /**
- * Service used by support personell, i.e. the incidents' 'processors'.
+ * Service used by support personnel (processors).
+ * 
+ * IMPORTANT: Service is open to any authenticated user so Fiori
+ * can load $metadata without freezing. The 'support' role is
+ * enforced at the entity level instead.
  */
+service ProcessorService {
 
-// THE LOBBY: Open to any logged-in user so Fiori $metadata loads without freezing
-@requires: 'authenticated-user'
-
-service ProcessorService { 
+    @restrict: [
+        { grant: ['READ', 'CREATE', 'UPDATE', 'DELETE'], to: 'support' }
+    ]
     entity Incidents as projection on my.Incidents;
-@readonly
-entity Customers as projection on my.Customers;
+
+    @restrict: [
+        { grant: ['READ'], to: 'support' }
+    ]
+    @readonly
+    entity Customers as projection on my.Customers;
 }
 
-annotate ProcessorService.Incidents with @odata.draft.enabled; 
-annotate ProcessorService with @(requires: 'support');
+// ✅ Single string — OR logic → any logged-in user can load $metadata
+annotate ProcessorService with @(requires: 'authenticated-user');
 
-/**
- * Service used by administrators to manage customers and incidents.
- */
+annotate ProcessorService.Incidents with @odata.draft.enabled;
+
 service AdminService {
     entity Customers as projection on my.Customers;
     entity Incidents as projection on my.Incidents;
-    }
+}
 annotate AdminService with @(requires: 'admin');
