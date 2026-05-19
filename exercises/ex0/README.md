@@ -35,7 +35,7 @@
      - [4.2. Create the SAP HANA Cloud Instance](#42-create-the-sap-hana-cloud-instance)
 - [Step 5. Launch SAP BAS, Import Project, and Deploy to Cloud Foundry](#step-5-launch-sap-bas-import-project-and-deploy-to-cloud-foundry)
      - [5.1. Create a Dev Space](#51-create-a-dev-space)
-     - [5.2. Download and Import the Project](#52-download-and-import-the-project)
+     - [5.2. Set Up and Import the Secure Incident Management Project](#52-Set-Up-and-Import-the-Secure-Incident-Management-Project)
      - [5.3. Build and Deploy the Application to Cloud Foundry](#53-build-and-deploy-the-application-to-cloud-foundry)
      - [5.4. Assign Role Collections to Business Users](#54-assign-role-collections-to-business-users)
 - [Step 6. Integrate Your Application with SAP Build Work Zone, Standard Edition](#step-6-integrate-your-application-with-sap-build-work-zone-standard-edition)
@@ -379,7 +379,7 @@ By the end of this step, the Secure Incident Management application will be succ
   <b></b>
 </p>
 
-### 5.2. Download and Import the Project
+### 5.2.  Set Up and Import the Secure Incident Management Project
 
 1. **Open the workspace folder:** Navigate to the **Hamburger Menu (☰) → File → Open Folder...**
 2. **Select the target directory:** In the file selection dialog, locate and select the **projects** folder, then click OK.
