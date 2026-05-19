@@ -35,7 +35,7 @@
      - [4.2. Create the SAP HANA Cloud Instance](#42-create-the-sap-hana-cloud-instance)
 - [Step 5. Launch SAP BAS, Import Project, and Deploy to Cloud Foundry](#step-5-launch-sap-bas-import-project-and-deploy-to-cloud-foundry)
      - [5.1. Create a Dev Space](#51-create-a-dev-space)
-     - [5.2. Set Up and Import the Secure Incident Management Project](#52-Set-Up-and-Import-the-Secure-Incident-Management-Project)
+     - [5.2. Set Up and Import the Secure Incident Management Project](#52--set-up-and-import-the-secure-incident-management-project)
      - [5.3. Build and Deploy the Application to Cloud Foundry](#53-build-and-deploy-the-application-to-cloud-foundry)
      - [5.4. Assign Role Collections to Business Users](#54-assign-role-collections-to-business-users)
 - [Step 6. Integrate Your Application with SAP Build Work Zone, Standard Edition](#step-6-integrate-your-application-with-sap-build-work-zone-standard-edition)
