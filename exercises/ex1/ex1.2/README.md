@@ -172,7 +172,6 @@ annotate ProcessorService with @(requires: ['support', 'admin']);  // ✅ NEW: A
 Key Changes:
 
 * ✅ Admin Full Access: { grant: '*', to: 'admin' } grants admins complete CRUD permissions.
-* ✅ Service-Level Role Requirements: @requires: ['support', 'admin'] allows both roles to access the service.
 
 ### 🪜 Step 2: Update Services.js
 The initial remediation code from [Exercise 1.1]((../ex1.1/README.md)) secured against Horizontal Privilege Escalation (support users interfering with other support users' incidents). 
