@@ -119,7 +119,7 @@ class ProcessorService extends cds.ApplicationService {
   - Log out and log in as david.miller@bestrun.com (admin role).
   - Try to open the incident management application (which will fail).
 - ✅ Result:
-  - ❌ UI displays a blank loading screen (no error message).
+  - ❌ UI displays 'Forbidden' error message..
   - ❌ Root Cause: @requires: 'support' in services.cds blocks admin access to the service.
 
 ### 📌Critical Vulnerability Summary
