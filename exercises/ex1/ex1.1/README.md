@@ -67,16 +67,15 @@ service ProcessorService {
 
     @requires: 'support'                               // ❌ VULNERABILITY: 'support' role grants unrestricted access to all operations.
                                                        // ❌ Missing row-level or field-level restrictions exposes sensitive incident data.
-    entity Incidents as projection on my.Incidents;    // ✅ Only 'support' role can access all incidents (read, write, delete)
+    entity Incidents as projection on my.Incidents;    // ❌ 'support' role can access all incidents (read, write, delete) 
 
-    @readonly                                           // ✅ Read-only customers (correct)
+    @readonly                                          // ✅ Read-only customers (correct)
     @requires: 'support'
-    entity Customers as projection on my.Customers;    // ✅ Only 'support' role can read customers
+    entity Customers as projection on my.Customers;    // ✅ 'support' role can only read customers (correct)
 }
 
 annotate ProcessorService.Incidents with @odata.draft.enabled;
 annotate ProcessorService with @(requires: 'authenticated-user');  // ✅ Any logged-in user can load $metadata
-
 ```
 **Why this is vulnerable:**
 - The database schema lacks an 'assignedTo' field to track incident ownership.
