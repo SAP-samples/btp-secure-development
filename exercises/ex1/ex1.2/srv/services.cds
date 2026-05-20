@@ -19,7 +19,7 @@ service ProcessorService {
 }
 
 annotate ProcessorService.Incidents with @odata.draft.enabled; 
-annotate ProcessorService with annotate ProcessorService with @(requires: 'authenticated-user');
+annotate ProcessorService with @(requires: 'authenticated-user');
 
 /**
  * Service used by administrators to manage customers and incidents.
