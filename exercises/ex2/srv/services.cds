@@ -1,22 +1,23 @@
 using { sap.capire.incidents as my } from '../db/schema';
 
 service ProcessorService {
+
   @restrict: [
-    { grant: ['READ', 'CREATE'], to: 'support' },
-    { grant: ['UPDATE', 'DELETE'], 
+    {
+      grant: ['READ', 'CREATE', 'UPDATE', 'DELETE'], // Support can view, create, update and delete incidents
       to: 'support',
-      where: 'assignedTo is null or assignedTo = $user'
+      where: 'assignedTo is null or assignedTo = $user' // Horizontal control for support
     },
     { grant: '*', to: 'admin' }
   ]
   entity Incidents as projection on my.Incidents;
-  
+
   @readonly
   entity Customers as projection on my.Customers;
 }
 
-annotate ProcessorService.Incidents with @odata.draft.enabled; 
-annotate ProcessorService with @(requires: ['support', 'admin']);
+annotate ProcessorService.Incidents with @odata.draft.enabled;
+annotate ProcessorService with @(requires: 'authenticated-user');
 
 /**
  * Service used by administrators to manage customers and incidents.
