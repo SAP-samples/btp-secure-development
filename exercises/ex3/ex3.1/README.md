@@ -71,7 +71,7 @@ service ProcessorService {
   entity Customers as projection on my.Customers;  // ❌ Exposes all customers data to support users.
 }
 
-annotate ProcessorService with @(requires: ['support', 'admin']); 
+annotate ProcessorService with @(requires: 'authenticated-user');
 
 service AdminService {
   entity Customers as projection on my.Customers;
