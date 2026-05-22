@@ -4,10 +4,8 @@ using { sap.capire.incidents as my } from '../db/schema';
 
 service ProcessorService {
   @restrict: [
-    { grant: ['READ', 'CREATE'], to: 'support' },  // Support can view and create
-    { grant: ['UPDATE', 'DELETE'], 
-      to: 'support',
-      where: 'assignedTo is null or assignedTo = $user'  // Horizontal control for support
+    { grant: ['READ', 'CREATE','UPDATE', 'DELETE'], to: 'support' },  // Support can view, create, uodate and delete incidents
+      where: 'assignedTo is null or assignedTo = $user'               // Horizontal control for support
     },
     { grant: '*', to: 'admin' }  // ✅ NEW: Explicit full access for admins (CREATE, READ, UPDATE, DELETE)
   ]
