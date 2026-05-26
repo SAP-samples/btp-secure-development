@@ -201,6 +201,7 @@ if (method === 'safe') {
       // If an unknown method is provided, return an error
       return req.error(400, `Unknown method: ${method}`);
     });
+    return super.init();
   }
 }
 
