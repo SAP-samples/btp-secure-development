@@ -28,7 +28,7 @@ By completing the exercises, you will gain the practical skills to identify and 
 
 ### 📋 Requirements
 
-- Some experience with **Node.js** and **GitHub**
+- Some experience with **Node.js** and **GitHub** will be helpful.
 
 ### 🔧 Prerequisites
 
