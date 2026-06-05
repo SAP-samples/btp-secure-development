@@ -4,7 +4,7 @@
 
 ## 📝Description
 
-This repository contains the material for the workshop called "Developing Secure Solutions With SAP BTP: Proven Techniques For The Real World".  
+This repository contains the material for the workshop called "Developing Secure Solutions With SAP BTP: Proven Techniques For The Real World".  Try it out.
 
 ## 🔎 Overview
 
