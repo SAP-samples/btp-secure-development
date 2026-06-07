@@ -695,7 +695,6 @@ Be sure to save and bookmark the URL for the Launchpad. You will need it to test
   <b></b>
 </p>
 
-
 Now you are ready to start the exercises. 
 
 
