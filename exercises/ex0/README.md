@@ -126,6 +126,12 @@ Trial accounts have a pre-linked Identity Authentication (IAS) tenant, so subscr
       * Check your registered email inbox (including spam/junk folders) for an activation message from SAP Cloud Identity Services.
       * Click the activation link in the email, follow the prompts to set a secure password, and log into the Identity Authentication Administration Console to confirm access.
       * This step is required for advanced user management later, including adding business users to access your SAP Build Work Zone and deployed applications.
+    
+  <!--
+⚠️ **Note:** 
+The Cloud Identity Services dashboard is currently inaccessible. As a result, you cannot define business users (e.g., Alice, Bob, David) at this time.
+-->
+
 
   <p align="center">
     <img src="images/cloud-identity_service_dashboard.png" alt="" width="900"/>
