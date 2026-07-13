@@ -187,7 +187,7 @@ Here is the updated services.js with added checks to enforce the admin-only rule
 
 ... // Other methods
 
- // ✅ NEW : Enforce admin-only operations (vertical ESC)
+// ✅ NEW: Enforce admin-only operations (vertical ESC)
   async onModify(req) {
     // Fetch current incident state (status + urgency)
     const result = await SELECT.one.from(req.subject)
@@ -198,22 +198,22 @@ Here is the updated services.js with added checks to enforce the admin-only rule
 
     // Check if incident is already closed
     if (result.status_code === 'C') {
-    // ✅ NEW : Allow only admins to modify/delete closed incidents
-      if (!req.user.isAdmin()) {
+      // ✅ NEW : Allow only admins to modify/delete closed incidents
+      if (!req.user || !req.user.is('admin')) {
         const action = req.event === 'UPDATE' ? 'modify' : 'delete';
-        return req.reject(403, `Cannot ${action} a closed incident`);
+        req.error(403, `Cannot ${action} a closed incident`);
       }
       // Admins can proceed
       return;
     }
+
     // ✅ UPDATE : Check if user is attempting to close the incident (status_code set to 'C')
     if (req.data.status_code === 'C') {
-    // ✅ NEW : Block support users from closing high-urgency incidents
-      if (result.urgency_code === 'H' && !req.user.isAdmin()) {
-        return req.reject(403, 'Only administrators can close high-urgency incidents');
+      // ✅ NEW : Block support users from closing high-urgency incidents
+      if (result.urgency_code === 'H' && (!req.user || !req.user.is('admin'))) {
+        req.error(403, 'Only administrators can close high-urgency incidents');
       }
     }
-
 ... // Other methods
 
 module.exports = { ProcessorService }
