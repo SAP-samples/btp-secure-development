@@ -245,8 +245,8 @@ cf deploy mta_archives/incident-management_1.0.0.mtar
 
 ### 🪜 Step 2: Login as Alice (Support User)
 - ▶️ Action:
-  - Access SAP Build Work Zone and log in with alice.jones@bestrun.com
-  - Locate a high-urgency incident assigned to Alice or unassigned.
+  - Access SAP Build Work Zone and log in with alice.jones@bestrun.com.
+  - Locate a high-urgency incident assigned to Alice or unassigned or create a new one.
   - Confirm the urgency is set to "High" and the status is not closed.
   - Click "Edit" and try to set the status to "Closed" (status_code = 'C').
   - Save the changes.
