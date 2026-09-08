@@ -48,7 +48,7 @@ service ProcessorService {
   @restrict: [
     { grant: ['READ', 'CREATE'], to: 'support' },        // ✅ Support users can view all incidents
     { grant: ['UPDATE', 'DELETE'],                       // ✅ UPDATE, DELETE granted to support users
-      to: 'support',
+      to: 'support',                                     // ❌ Only support role required, admins excluded 
       where: 'assignedTo is null or assignedTo = $user'  // ✅ Horizontal control (correct)
     }
   ]
@@ -57,7 +57,8 @@ service ProcessorService {
     entity Customers as projection on my.Customers;     
 }
 
-annotate ProcessorService with @(requires: 'support');  // ❌ Only support role required, admins excluded
+annotate ProcessorService.Incidents with @odata.draft.enabled; 
+annotate ProcessorService with @(requires: 'authenticated-user');
 
 ```
 **File**: `srv/services.js`
