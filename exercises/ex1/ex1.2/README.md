@@ -164,8 +164,8 @@ service ProcessorService {
 
 }
 
-annotate ProcessorService with @(requires: ['support', 'admin']);  // ✅ NEW: Allow both roles, support and admin, at service level.
-
+annotate ProcessorService.Incidents with @odata.draft.enabled; 
+annotate ProcessorService with @(requires: 'authenticated-user');
 ...
 
 ```
