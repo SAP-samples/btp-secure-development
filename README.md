@@ -6,6 +6,25 @@
 
 This repository contains the material for the workshop called "Developing Secure Solutions With SAP BTP: Proven Techniques For The Real World".  Try it out.
 
+
+## Read the blog series
+
+Want to understand the security challenges before starting the exercises?
+Explore this two-part SAP Community series, then return here to try the
+hands-on workshop.
+
+- [Part 1 — Break It, Fix It: Hands-On Security for SAP CAP Apps](https://community.sap.com/t5/sap-cap-blog-posts/break-it-fix-it-hands-on-security-for-sap-cap-apps-part-1/ba-p/14525283)  
+  Follow Alice’s story to learn how broken access control, SQL injection,
+  and missing audit logging put an application at risk—and how to address
+  them with CAP and SAP BTP.
+
+- [Part 2 — Prove It: Reviewing SAP CAP Security with the AI OWASP Scanner](REPLACE_WITH_PART_2_URL)  
+  Explore AI-assisted security code review, evidence-backed findings,
+  and before-and-after reports to assess your remediation.
+
+The blogs provide context and explanations; the exercises let you put
+the concepts into practice.
+
 ## 🔎 Overview
 
 Welcome to this hands-on workshop dedicated to embedding security into your SAP BTP applications. 
